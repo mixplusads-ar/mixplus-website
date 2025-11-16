@@ -1200,7 +1200,7 @@
 
   <section class="mix-hero">
     <div class="mix-hero__video-container">
-      <video class="mix-hero__video" id="hero-video" autoplay muted playsinline loop>
+      <video class="mix-hero__video" id="hero-video" autoplay muted playsinline>
         <source src="videos/hero-01.mp4" type="video/mp4">
       </video>
       <img src="images/hero-fallback.jpg" 
@@ -1494,7 +1494,7 @@
       document.getElementById('catalog-link').href = `docs/catalog-${currentLang}.pdf`;
       document.getElementById('mobile-catalog-link').href = `docs/catalog-${currentLang}.pdf`;
       document.getElementById('catalog-btn').href = `docs/catalog-${currentLang}.pdf`;
-      document.getElementById('factory-video').src = currentLang === 'fa' ? 'https://www.aparat.com/video/video/embed/videohash/sample/vt/frame' : 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+      document.getElementById('factory-video').src = currentLang === 'fa' ? 'https://www.aparat.com/video/video/embed/videohash/rqy7870/vt/frame' : 'https://www.youtube.com/embed/eaICa0IHvu0';
       
       updateProductsSubmenu();
       clearInterval(window.heroMessageInterval);
@@ -1615,6 +1615,29 @@
       const heroHeight = document.querySelector('.mix-hero').offsetHeight;
       const scrolled = window.scrollY > (heroHeight - 100); // 100px قبل از انتهای هیرو
       document.getElementById('header').classList.toggle('mix-header--scrolled', scrolled);
+    });
+
+    // Hero Video Rotation (1→2→3→4→1...)
+    const heroVideo = document.getElementById('hero-video');
+    const heroFallback = document.getElementById('hero-fallback');
+    const videos = ['videos/hero-01.mp4', 'videos/hero-02.mp4', 'videos/hero-03.mp4', 'videos/hero-04.mp4'];
+    let currentVideoIndex = 0;
+
+    function playNextVideo() {
+      currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+      heroVideo.src = videos[currentVideoIndex];
+      heroVideo.load();
+      heroVideo.play().catch(() => {
+        heroVideo.classList.add('hidden');
+        heroFallback.classList.remove('hidden');
+      });
+    }
+
+    heroVideo.addEventListener('ended', playNextVideo);
+    
+    heroVideo.play().catch(() => {
+      heroVideo.classList.add('hidden');
+      heroFallback.classList.remove('hidden');
     });
 
     // Init
