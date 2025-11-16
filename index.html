@@ -1548,23 +1548,29 @@
         const titleEl = document.getElementById('hero-title');
         const subtitleEl = document.getElementById('hero-subtitle');
         
-        // Fade out
-        titleEl.style.animation = 'none';
-        subtitleEl.style.animation = 'none';
+        // Fade out با انیمیشن
+        titleEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        subtitleEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         titleEl.style.opacity = '0';
+        titleEl.style.transform = 'translateY(-20px)';
         subtitleEl.style.opacity = '0';
+        subtitleEl.style.transform = 'translateY(-20px)';
         
         setTimeout(() => {
           const msg = heroMessages[currentLang][messageQueue.shift()];
           titleEl.textContent = msg.title;
           subtitleEl.textContent = msg.subtitle;
           
-          // Fade in
+          // Fade in با انیمیشن
           setTimeout(() => {
-            titleEl.style.animation = 'fadeInUp 0.8s ease-out forwards';
-            subtitleEl.style.animation = 'fadeInUp 0.8s ease-out 0.2s forwards';
+            titleEl.style.opacity = '1';
+            titleEl.style.transform = 'translateY(0)';
+            setTimeout(() => {
+              subtitleEl.style.opacity = '1';
+              subtitleEl.style.transform = 'translateY(0)';
+            }, 200);
           }, 50);
-        }, 400);
+        }, 650);
       }
       window.heroMessageInterval = setInterval(showNext, 5000);
     }
