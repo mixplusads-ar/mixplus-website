@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" class="theme-light lang-en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MixPlus - Premium Kitchen Products with Italian Design</title>
+  <meta name="description" content="MixPlus, manufacturer of gas hobs, sinks, built-in ovens and hoods with superior quality and Italian-inspired design">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="MixPlus">
+  <meta property="og:description" content="Premium Kitchen Products with Italian Design">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* ==================== FONT FACES ==================== */
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700;900&family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,600&display=swap');
+    
+    /* CSS Variables for fonts */
+    :root {
+      --font-fa: 'Vazirmatn', sans-serif;
+      --font-fa-num: 'Vazirmatn', sans-serif;
+      --font-en: 'Montserrat', sans-serif;
+      
+      /* Brand Color */
+      --brand: #0fa99c;
+      
+      /* Light Theme */
+      --bg: #ffffff;
+      --fg: #111111;
+      --card: #f9fafb;
+      --stroke: rgba(17, 17, 17, 0.16);
+    }
+    
+    /* Dark Theme Variables */
+    [data-theme="dark"] {
+      --bg: #0a0c10;
+      --fg: #f9fafb;
+      --card: #1a1d24;
+      --stroke: rgba(249, 250, 251, 0.16);
+    }
+    
+    /* ==================== BASE STYLES ==================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: var(--font-en);
+      background-color: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* ==================== HEADER STYLES (LTR) ==================== */
+    .mix-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: transparent;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s ease;
+    }
+    
+    .mix-header--scrolled {
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid var(--stroke);
+    }
+    
+    [data-theme="dark"] .mix-header--scrolled {
+      background: rgba(10, 12, 16, 0.9);
+    }
+    
+    .mix-header__container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      gap: 4.2rem;
+    }
+    
+    .mix-header__logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+    }
+    
+    .mix-header__logo img {
+      height: 42px;
+      width: auto;
+    }
+    
+    .mix-header__nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    
+    .mix-header__nav--left {
+      justify-content: flex-start;
+    }
+    
+    .mix-header__nav--right {
+      justify-content: flex-end;
+    }
+    
+    .mix-header__item {
+      position: relative;
+      padding: 0.5rem 0.75rem;
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+      background: none;
+      border: none;
+    }
+    
+    .mix-header__item:hover,
+    .mix-header__item:focus {
+      color: var(--brand);
+    }
+    
+    .mix-header__divider {
+      width: 1px;
+      height: 20px;
+      background: var(--stroke);
+      margin: 0 0.25rem;
+    }
+    
+    .mix-header__icon-btn {
+      background: none;
+      border: none;
+      color: var(--fg);
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s ease;
+    }
+    
+    .mix-header__icon-btn:hover {
+      color: var(--brand);
+    }
+    
+    /* ==================== MEGA MENU STYLES (LTR) ==================== */
+    .mix-megamenu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      background: var(--bg);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.25s ease;
+      min-width: 480px;
+      z-index: 100;
+    }
+    
+    [data-theme="dark"] .mix-megamenu {
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .mix-megamenu.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .mix-megamenu__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    
+    .mix-megamenu__col {
+      padding: 1.5rem;
+    }
+    
+    .mix-megamenu__col:first-child {
+      border-right: 1px solid var(--stroke);
+    }
+    
+    .mix-megamenu__root-item {
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      position: relative;
+      margin-bottom: 0.25rem;
+    }
+    
+    .mix-megamenu__root-item:hover,
+    .mix-megamenu__root-item.active {
+      color: var(--brand);
+      font-weight: 700;
+      background: rgba(15, 169, 156, 0.05);
+    }
+    
+    .mix-megamenu__root-item.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 60%;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+    
+    .mix-megamenu__sub-item {
+      padding: 0.6rem 1rem;
+      color: var(--fg);
+      text-decoration: none;
+      display: block;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    
+    .mix-megamenu__sub-item:hover {
+      color: var(--brand);
+      background: rgba(15, 169, 156, 0.05);
+    }
+    
+    /* Simple dropdown for social and lang */
+    .mix-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: var(--bg);
+      border: 1px solid var(--stroke);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.25s ease;
+      min-width: 180px;
+      z-index: 100;
+    }
+    
+    .mix-dropdown.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .mix-dropdown a {
+      display: block;
+      padding: 0.75rem 1.25rem;
+      color: var(--fg);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    .mix-dropdown a:hover {
+      color: var(--brand);
+      background: rgba(15, 169, 156, 0.05);
+    }
+    
+    .mix-dropdown a:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .mix-dropdown a:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+    
+    /* ==================== HERO STYLES ==================== */
+    .mix-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .mix-hero__video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .mix-hero__video,
+    .mix-hero__fallback-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    
+    .mix-hero__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+    }
+    
+    .mix-hero__content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      color: white;
+      max-width: 800px;
+      padding: 2rem;
+    }
+    
+    .mix-hero__title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .mix-hero__subtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      opacity: 0.95;
+      animation: fadeInUp 0.6s ease-out 0.2s backwards;
+    }
+    
+    .mix-hero__scroll-arrow {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      cursor: pointer;
+      animation: bounceArrow 2s infinite;
+    }
+    
+    .mix-hero__scroll-arrow svg {
+      width: 40px;
+      height: 40px;
+      fill: white;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes bounceArrow {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translateX(-50%) translateY(10px);
+        opacity: 1;
+      }
+    }
+    
+    /* ==================== SECTION STYLES ==================== */
+    .mix-section {
+      padding: 5rem 2rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    
+    .mix-section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .mix-section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--fg);
+    }
+    
+    .mix-section-title p {
+      font-size: 1.125rem;
+      color: var(--fg);
+      opacity: 0.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* ==================== GRID STYLES ==================== */
+    .mix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mix-grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .mix-grid--4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .mix-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: var(--card);
+    }
+    
+    .mix-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .mix-card__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .mix-card__overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+    }
+    
+    .mix-card__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    /* ==================== FULL BLEED BANNER ==================== */
+    .mix-fullbleed {
+      position: relative;
+      height: 60vh;
+      min-height: 400px;
+      margin: 4rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .mix-fullbleed__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .mix-fullbleed__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    }
+    
+    .mix-fullbleed__content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      color: white;
+      max-width: 800px;
+      padding: 2rem;
+    }
+    
+    .mix-fullbleed__title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    
+    .mix-fullbleed__text {
+      font-size: 1.25rem;
+      opacity: 0.95;
+    }
+    
+    /* ==================== VIDEO EMBED ==================== */
+    .mix-video-embed {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--card);
+    }
+    
+    .mix-video-embed iframe,
+    .mix-video-embed img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* ==================== SOCIAL STRIP ==================== */
+    .mix-social-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background: var(--card);
+      margin: 4rem 0;
+    }
+    
+    .mix-social-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      border: 2px solid var(--stroke);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .mix-social-icon:hover {
+      border-color: var(--brand);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(15, 169, 156, 0.2);
+    }
+    
+    .mix-social-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--fg);
+      transition: fill 0.3s ease;
+    }
+    
+    .mix-social-icon:hover svg {
+      fill: var(--brand);
+    }
+    
+    /* ==================== BUTTONS ==================== */
+    .mix-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    .mix-btn--primary {
+      background: var(--brand);
+      color: white;
+    }
+    
+    .mix-btn--primary:hover {
+      background: #0d8f84;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(15, 169, 156, 0.3);
+    }
+    
+    .mix-btn--outline {
+      background: transparent;
+      color: var(--fg);
+      border: 2px solid var(--stroke);
+    }
+    
+    .mix-btn--outline:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+    
+    /* ==================== FOOTER ==================== */
+    .mix-footer {
+      background: var(--card);
+      border-top: 1px solid var(--stroke);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    .mix-footer__logo {
+      height: 40px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .mix-footer__text {
+      color: var(--fg);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+    
+    .mix-footer__links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .mix-footer__link {
+      color: var(--fg);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: all 0.2s ease;
+    }
+    
+    .mix-footer__link:hover {
+      color: var(--brand);
+      opacity: 1;
+    }
+    
+    /* ==================== MOBILE MENU ==================== */
+    .mix-header__mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--fg);
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+    
+    .mix-header__mobile-toggle svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+    }
+    
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 1200px) {
+      .mix-header__container {
+        padding: 0 1.5rem;
+        gap: 2rem;
+      }
+      
+      .mix-header__logo {
+        padding: 0 1rem;
+      }
+      
+      .mix-header__nav {
+        gap: 0.25rem;
+      }
+      
+      .mix-header__item {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+      }
+    }
+    
+    @media (max-width: 968px) {
+      .mix-header__container {
+        padding: 0 1rem;
+        gap: 1rem;
+        height: 70px;
+      }
+      
+      .mix-header__nav {
+        display: none !important;
+      }
+      
+      .mix-header__mobile-toggle {
+        display: flex;
+      }
+      
+      .mix-header__logo img {
+        height: 36px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .mix-hero {
+        min-height: 500px;
+      }
+      
+      .mix-hero__title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .mix-hero__subtitle {
+        font-size: 1.125rem;
+      }
+      
+      .mix-hero__scroll-arrow {
+        bottom: 2rem;
+      }
+      
+      .mix-section {
+        padding: 3rem 1rem;
+      }
+      
+      .mix-section-title h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      .mix-section-title p {
+        font-size: 1rem;
+      }
+      
+      .mix-grid {
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .mix-fullbleed {
+        height: 40vh;
+        min-height: 300px;
+        margin: 2rem 0;
+      }
+      
+      .mix-fullbleed__title {
+        font-size: 1.75rem;
+      }
+      
+      .mix-fullbleed__text {
+        font-size: 1rem;
+      }
+      
+      .mix-social-strip {
+        gap: 1rem;
+        padding: 2rem 1rem;
+        flex-wrap: wrap;
+      }
+      
+      .mix-social-icon {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .mix-social-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .mix-card__title {
+        font-size: 1.125rem;
+      }
+      
+      .mix-footer {
+        padding: 2rem 1rem;
+      }
+      
+      .mix-footer__links {
+        gap: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .mix-hero__title {
+        font-size: 1.5rem;
+      }
+      
+      .mix-hero__subtitle {
+        font-size: 1rem;
+      }
+      
+      .mix-section-title h2 {
+        font-size: 1.5rem;
+      }
+      
+      .mix-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .mix-grid--4 {
+        grid-template-columns: 1fr;
+      }
+      
+      .mix-fullbleed__title {
+        font-size: 1.5rem;
+      }
+      
+      .mix-fullbleed__text {
+        font-size: 0.875rem;
+      }
+      
+      .mix-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+      }
+      
+      .mix-card__title {
+        font-size: 1rem;
+      }
+    }
+    
+    /* ==================== UTILITIES ==================== */
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER (LTR) ==================== -->
+  <header class="mix-header" id="header">
+    <div class="mix-header__container">
+      <!-- Left Navigation (LTR) -->
+      <nav class="mix-header__nav mix-header__nav--left">
+        <!-- Products Mega Menu -->
+        <div style="position: relative;">
+          <button class="mix-header__item" id="products-trigger">Products</button>
+          <div class="mix-megamenu" id="products-mega">
+            <div class="mix-megamenu__content">
+              <div class="mix-megamenu__col">
+                <div class="mix-megamenu__root-item active" data-category="hob">Hob</div>
+                <div class="mix-megamenu__root-item" data-category="sink">Sink</div>
+                <div class="mix-megamenu__root-item" data-category="oven">Built-in Oven</div>
+                <div class="mix-megamenu__root-item" data-category="hood">Hood</div>
+              </div>
+              <div class="mix-megamenu__col" id="products-subs">
+                <a href="#" class="mix-megamenu__sub-item">Steel Hob</a>
+                <a href="#" class="mix-megamenu__sub-item">Glass Hob</a>
+                <a href="#" class="mix-megamenu__sub-item">Enamel Hob</a>
+                <a href="#" class="mix-megamenu__sub-item">Electric Hob</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mix-header__divider"></div>
+        
+        <a href="#" class="mix-header__item">Dealers</a>
+        
+        <div class="mix-header__divider"></div>
+        
+        <!-- After-Sales Mega Menu -->
+        <div style="position: relative;">
+          <button class="mix-header__item" id="aftersales-trigger">After-Sales</button>
+          <div class="mix-megamenu" id="aftersales-mega" style="min-width: 320px;">
+            <div style="padding: 1.5rem;">
+              <a href="#" class="mix-megamenu__sub-item">Complaint Process</a>
+              <a href="#" class="mix-megamenu__sub-item">Warranty Terms</a>
+              <a href="#" class="mix-megamenu__sub-item">Installation Request</a>
+              <a href="#" class="mix-megamenu__sub-item">Complaint</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mix-header__divider"></div>
+        
+        <a href="#" class="mix-header__item">About Us</a>
+      </nav>
+      
+      <!-- Logo -->
+      <a href="#" class="mix-header__logo">
+        <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+          <text x="60" y="25" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="var(--brand)" text-anchor="middle">MixPlus</text>
+        </svg>
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mix-header__mobile-toggle" id="mobile-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="3" y1="12" x2="21" y2="12" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="6" x2="21" y2="6" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="18" x2="21" y2="18" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <!-- Right Navigation (LTR) -->
+      <nav class="mix-header__nav mix-header__nav--right">
+        <button class="mix-header__icon-btn" id="search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        
+        <div class="mix-header__divider"></div>
+        
+        <!-- Social Dropdown -->
+        <div style="position: relative;">
+          <button class="mix-header__item" id="social-trigger">#</button>
+          <div class="mix-dropdown" id="social-dropdown">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://aparat.com" target="_blank" rel="noopener">Aparat</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://t.me" target="_blank" rel="noopener">Telegram</a>
+          </div>
+        </div>
+        
+        <div class="mix-header__divider"></div>
+        
+        <a href="/catalog-en.pdf" class="mix-header__item" target="_blank">Download Catalog</a>
+        
+        <div class="mix-header__divider"></div>
+        
+        <!-- Language Dropdown -->
+        <div style="position: relative;">
+          <button class="mix-header__item" id="lang-trigger">
+            English
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-left: 4px;">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mix-dropdown" id="lang-dropdown">
+            <a href="/index.html">فارسی</a>
+          </div>
+        </div>
+        
+        <div class="mix-header__divider"></div>
+        
+        <button class="mix-header__icon-btn" id="theme-toggle" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-sun">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-moon" class="hidden">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="mix-hero" id="hero">
+    <div class="mix-hero__video-container">
+      <video class="mix-hero__video" id="hero-video" autoplay muted playsinline>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1920&h=1080&fit=crop" 
+           alt="Hero Background" 
+           class="mix-hero__fallback-image hidden" 
+           id="hero-fallback">
+    </div>
+    <div class="mix-hero__overlay"></div>
+    <div class="mix-hero__content">
+      <h1 class="mix-hero__title" id="hero-title">Premium Quality with Italian Design</h1>
+      <p class="mix-hero__subtitle" id="hero-subtitle">Kitchen products that transform your life</p>
+    </div>
+    <div class="mix-hero__scroll-arrow" id="scroll-arrow" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==================== BRAND INTRO ==================== -->
+  <section class="mix-section">
+    <div class="mix-section-title">
+      <h2>MixPlus: Quality and Beauty in Your Kitchen</h2>
+      <p>Inspired by Italian design and using the finest raw materials, we manufacture products that combine beauty with durability and high performance. MixPlus, the smart choice for modern kitchens.</p>
+    </div>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+      <a href="#categories" class="mix-btn mix-btn--primary">View Products</a>
+      <a href="#" class="mix-btn mix-btn--outline">About MixPlus</a>
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORIES GRID ==================== -->
+  <section class="mix-section" id="categories">
+    <div class="mix-section-title">
+      <h2>Product Categories</h2>
+      <p>Diverse choices for every taste and need</p>
+    </div>
+    <div class="mix-grid mix-grid--4">
+      <a href="#" class="mix-card">
+        <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=400&h=533&fit=crop" alt="Hob" class="mix-card__image">
+        <div class="mix-card__overlay">
+          <h3 class="mix-card__title">Hob</h3>
+        </div>
+      </a>
+      <a href="#" class="mix-card">
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=533&fit=crop" alt="Sink" class="mix-card__image">
+        <div class="mix-card__overlay">
+          <h3 class="mix-card__title">Sink</h3>
+        </div>
+      </a>
+      <a href="#" class="mix-card">
+        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=400&h=533&fit=crop" alt="Built-in Oven" class="mix-card__image">
+        <div class="mix-card__overlay">
+          <h3 class="mix-card__title">Built-in Oven</h3>
+        </div>
+      </a>
+      <a href="#" class="mix-card">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=533&fit=crop" alt="Hood" class="mix-card__image">
+        <div class="mix-card__overlay">
+          <h3 class="mix-card__title">Hood</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FULL BLEED BANNER 1 ==================== -->
+  <section class="mix-fullbleed">
+    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1920&h=1080&fit=crop" alt="Banner 1" class="mix-fullbleed__image">
+    <div class="mix-fullbleed__overlay"></div>
+    <div class="mix-fullbleed__content">
+      <h2 class="mix-fullbleed__title">Italian-Inspired Design</h2>
+      <p class="mix-fullbleed__text">Beauty, quality and innovation in every detail of our products</p>
+    </div>
+  </section>
+
+  <!-- ==================== VIDEO SECTION ==================== -->
+  <section class="mix-section">
+    <div class="mix-section-title">
+      <h2>Visit MixPlus Factory</h2>
+      <p>A close look at the production process of our quality products</p>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div class="mix-video-embed">
+        <iframe 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FULL BLEED BANNER 2 ==================== -->
+  <section class="mix-fullbleed">
+    <img src="https://images.unsplash.com/photo-1556909172-8c2f041fca5d?w=1920&h=1080&fit=crop" alt="Banner 2" class="mix-fullbleed__image">
+    <div class="mix-fullbleed__overlay"></div>
+    <div class="mix-fullbleed__content">
+      <h2 class="mix-fullbleed__title">Unmatched Quality, Fair Price</h2>
+      <p class="mix-fullbleed__text">MixPlus products, a smart choice for your kitchen</p>
+    </div>
+  </section>
+
+  <!-- ==================== FULL BLEED BANNER 3 ==================== -->
+  <section class="mix-fullbleed">
+    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1920&h=1080&fit=crop" alt="Banner 3" class="mix-fullbleed__image">
+    <div class="mix-fullbleed__overlay"></div>
+    <div class="mix-fullbleed__content">
+      <h2 class="mix-fullbleed__title">Professional After-Sales Service</h2>
+      <p class="mix-fullbleed__text">Your satisfaction is our priority</p>
+    </div>
+  </section>
+
+  <!-- ==================== SOCIAL STRIP ==================== -->
+  <section class="mix-social-strip">
+    <a href="https://linkedin.com" target="_blank" rel="noopener" class="mix-social-icon" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+    </a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" class="mix-social-icon" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener" class="mix-social-icon" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+      </svg>
+    </a>
+    <a href="https://aparat.com" target="_blank" rel="noopener" class="mix-social-icon" aria-label="Aparat">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+    </a>
+    <a href="https://t.me" target="_blank" rel="noopener" class="mix-social-icon" aria-label="Telegram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 2L11 13"/>
+        <path d="M22 2L15 22l-4-9-9-4z"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ==================== SHORTCUT CARDS ==================== -->
+  <section class="mix-section">
+    <div class="mix-grid mix-grid--4">
+      <a href="#" class="mix-card" style="aspect-ratio: 1/1;">
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=400&fit=crop" alt="Products" class="mix-card__image">
+        <div class="mix-card__overlay">
+          <h3 class="mix-card__title">Products</h3>
+        </div>
+      </a>
+      <a href="#" class="mix-card" style="aspect-ratio: 1/1;">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=400&fit=crop" alt="Events" class="mix-card__image">
+        <div class="mix-card__overlay">
+          <h3 class="mix-card__title">Events</h3>
+        </div>
+      </a>
+      <a href="#" class="mix-card" style="aspect-ratio: 1/1;">
+        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=400&h=400&fit=crop" alt="Services" class="mix-card__image">
+        <div class="mix-card__overlay">
+          <h3 class="mix-card__title">Services</h3>
+        </div>
+      </a>
+      <a href="#" class="mix-card" style="aspect-ratio: 1/1;">
+        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=400&h=400&fit=crop" alt="Training" class="mix-card__image">
+        <div class="mix-card__overlay">
+          <h3 class="mix-card__title">Training</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FULL BLEED BANNER 4 ==================== -->
+  <section class="mix-fullbleed">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&h=1080&fit=crop" alt="Banner 4" class="mix-fullbleed__image">
+    <div class="mix-fullbleed__overlay"></div>
+    <div class="mix-fullbleed__content">
+      <h2 class="mix-fullbleed__title">With You Every Moment</h2>
+      <p class="mix-fullbleed__text">MixPlus, a trusted name in the home appliances industry</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mix-footer">
+    <svg width="100" height="35" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="mix-footer__logo" style="margin: 0 auto 1.5rem;">
+      <text x="60" y="25" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="var(--brand)" text-anchor="middle">MixPlus</text>
+    </svg>
+    <p class="mix-footer__text">© 2024 MixPlus. All rights reserved.</p>
+    <div class="mix-footer__links">
+      <a href="#" class="mix-footer__link">Contact Us</a>
+      <a href="#" class="mix-footer__link">Privacy Policy</a>
+      <a href="#" class="mix-footer__link">Terms of Use</a>
+      <a href="#" class="mix-footer__link">Dealers</a>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // ==================== THEME MANAGEMENT ====================
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const sunIcon = document.getElementById('theme-icon-sun');
+    const moonIcon = document.getElementById('theme-icon-moon');
+    
+    const savedTheme = localStorage.getItem('mix_theme') || 'light';
+    setTheme(savedTheme);
+    
+    function setTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      html.classList.remove('theme-light', 'theme-dark');
+      html.classList.add(`theme-${theme}`);
+      
+      if (theme === 'dark') {
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+      } else {
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+      }
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(newTheme);
+      localStorage.setItem('mix_theme', newTheme);
+    });
+    
+    // ==================== HEADER SCROLL ====================
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('mix-header--scrolled');
+      } else {
+        header.classList.remove('mix-header--scrolled');
+      }
+    });
+    
+    // ==================== MEGA MENU - PRODUCTS ====================
+    const productsTrigger = document.getElementById('products-trigger');
+    const productsMega = document.getElementById('products-mega');
+    const productsSubs = document.getElementById('products-subs');
+    
+    const categories = {
+      hob: [
+        { name: 'Steel Hob', slug: 'steel' },
+        { name: 'Glass Hob', slug: 'glass' },
+        { name: 'Enamel Hob', slug: 'enamel' },
+        { name: 'Electric Hob', slug: 'electric' }
+      ],
+      sink: [
+        { name: 'Handmade Sinks', slug: 'handmade' },
+        { name: 'Topmount Steel', slug: 'topmount' },
+        { name: 'Undermount Steel', slug: 'undermount' },
+        { name: 'Semi-fancy', slug: 'semi-fancy' },
+        { name: 'Granite', slug: 'granite' },
+        { name: 'Under-cabinet', slug: 'under-cab' }
+      ],
+      oven: [
+        { name: 'View All', slug: 'all' }
+      ],
+      hood: [
+        { name: 'Built-in Hood', slug: 'built-in' },
+        { name: 'Wall Hood', slug: 'wall' }
+      ]
+    };
+    
+    let productsHoverTimeout;
+    
+    productsTrigger.addEventListener('mouseenter', () => {
+      clearTimeout(productsHoverTimeout);
+      productsHoverTimeout = setTimeout(() => {
+        productsMega.classList.add('active');
+      }, 250);
+    });
+    
+    productsTrigger.addEventListener('mouseleave', () => {
+      clearTimeout(productsHoverTimeout);
+      productsHoverTimeout = setTimeout(() => {
+        if (!productsMega.matches(':hover')) {
+          productsMega.classList.remove('active');
+        }
+      }, 250);
+    });
+    
+    productsMega.addEventListener('mouseenter', () => {
+      clearTimeout(productsHoverTimeout);
+      productsMega.classList.add('active');
+    });
+    
+    productsMega.addEventListener('mouseleave', () => {
+      productsHoverTimeout = setTimeout(() => {
+        productsMega.classList.remove('active');
+      }, 250);
+    });
+    
+    document.querySelectorAll('.mix-megamenu__root-item').forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        document.querySelectorAll('.mix-megamenu__root-item').forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+        
+        const category = this.getAttribute('data-category');
+        const subs = categories[category];
+        
+        productsSubs.innerHTML = '';
+        subs.forEach(sub => {
+          const link = document.createElement('a');
+          link.href = '#';
+          link.className = 'mix-megamenu__sub-item';
+          link.textContent = sub.name;
+          productsSubs.appendChild(link);
+        });
+      });
+    });
+    
+    // ==================== MEGA MENU - AFTER SALES ====================
+    const aftersalesTrigger = document.getElementById('aftersales-trigger');
+    const aftersalesMega = document.getElementById('aftersales-mega');
+    
+    let aftersalesHoverTimeout;
+    
+    aftersalesTrigger.addEventListener('mouseenter', () => {
+      clearTimeout(aftersalesHoverTimeout);
+      aftersalesHoverTimeout = setTimeout(() => {
+        aftersalesMega.classList.add('active');
+      }, 250);
+    });
+    
+    aftersalesTrigger.addEventListener('mouseleave', () => {
+      clearTimeout(aftersalesHoverTimeout);
+      aftersalesHoverTimeout = setTimeout(() => {
+        if (!aftersalesMega.matches(':hover')) {
+          aftersalesMega.classList.remove('active');
+        }
+      }, 250);
+    });
+    
+    aftersalesMega.addEventListener('mouseenter', () => {
+      clearTimeout(aftersalesHoverTimeout);
+      aftersalesMega.classList.add('active');
+    });
+    
+    aftersalesMega.addEventListener('mouseleave', () => {
+      aftersalesHoverTimeout = setTimeout(() => {
+        aftersalesMega.classList.remove('active');
+      }, 250);
+    });
+    
+    // ==================== DROPDOWNS ====================
+    function setupDropdown(triggerId, dropdownId) {
+      const trigger = document.getElementById(triggerId);
+      const dropdown = document.getElementById(dropdownId);
+      
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+      });
+      
+      document.addEventListener('click', () => {
+        dropdown.classList.remove('active');
+      });
+      
+      dropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+    
+    setupDropdown('social-trigger', 'social-dropdown');
+    setupDropdown('lang-trigger', 'lang-dropdown');
+    
+    // ==================== HERO VIDEO ROTATION ====================
+    const heroVideo = document.getElementById('hero-video');
+    const heroFallback = document.getElementById('hero-fallback');
+    
+    const videos = [
+      'https://www.w3schools.com/html/mov_bbb.mp4',
+      'https://www.w3schools.com/html/movie.mp4',
+      'https://www.w3schools.com/html/mov_bbb.mp4',
+      'https://www.w3schools.com/html/movie.mp4'
+    ];
+    
+    let videoQueue = [];
+    
+    function shuffleArray(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+    
+    function playNextVideo() {
+      if (videoQueue.length === 0) {
+        videoQueue = shuffleArray(videos);
+      }
+      const nextVideo = videoQueue.shift();
+      heroVideo.src = nextVideo;
+      heroVideo.play().catch(() => {
+        heroVideo.classList.add('hidden');
+        heroFallback.classList.remove('hidden');
+      });
+    }
+    
+    heroVideo.addEventListener('ended', playNextVideo);
+    
+    heroVideo.play().catch(() => {
+      heroVideo.classList.add('hidden');
+      heroFallback.classList.remove('hidden');
+    });
+    
+    // ==================== HERO TITLES ROTATION ====================
+    const heroTitle = document.getElementById('hero-title');
+    const heroSubtitle = document.getElementById('hero-subtitle');
+    
+    const messages = [
+      { title: 'Premium Quality with Italian Design', subtitle: 'Kitchen products that transform your life' },
+      { title: 'Innovation in Every Detail', subtitle: 'Advanced technology at your service' },
+      { title: 'Beauty That Lasts', subtitle: 'Designs that never go out of style' },
+      { title: 'Built to Last', subtitle: 'Quality that stands the test of time' },
+      { title: 'Inspired by Italy', subtitle: 'Art and industry combined' },
+      { title: 'Your Dream Kitchen', subtitle: 'Becomes reality with MixPlus products' },
+      { title: 'Reliable Quality', subtitle: 'The smart choice for your home' },
+      { title: 'Endless Innovation', subtitle: 'Always one step ahead of expectations' },
+      { title: 'Designed for Life', subtitle: 'Products that match your lifestyle' },
+      { title: 'MixPlus, A Trusted Name', subtitle: 'Over a decade of experience in home appliances' }
+    ];
+    
+    let messageQueue = [];
+    
+    function showNextMessage() {
+      if (messageQueue.length === 0) {
+        messageQueue = shuffleArray([...Array(messages.length).keys()]);
+      }
+      
+      const index = messageQueue.shift();
+      const message = messages[index];
+      
+      heroTitle.style.animation = 'none';
+      heroSubtitle.style.animation = 'none';
+      
+      setTimeout(() => {
+        heroTitle.textContent = message.title;
+        heroSubtitle.textContent = message.subtitle;
+        heroTitle.style.animation = 'fadeInUp 0.6s ease-out';
+        heroSubtitle.style.animation = 'fadeInUp 0.6s ease-out 0.2s backwards';
+      }, 50);
+    }
+    
+    setInterval(showNextMessage, 5000);
+    
+    // ==================== SCROLL ARROW ====================
+    const scrollArrow = document.getElementById('scroll-arrow');
+    
+    scrollArrow.addEventListener('click', () => {
+      document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // ==================== SMOOTH SCROLL FOR ALL LINKS ====================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
