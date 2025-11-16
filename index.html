@@ -805,6 +805,22 @@
       fill: var(--brand);
     }
     
+    /* آیکون‌های SVG با فایل - تغییر رنگ با تم */
+    .mix-social-icon img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) saturate(100%);
+      transition: filter 0.3s ease;
+    }
+    
+    [data-theme="dark"] .mix-social-icon img {
+      filter: brightness(0) saturate(100%) invert(1);
+    }
+    
+    .mix-social-icon:hover img {
+      filter: brightness(0) saturate(100%) invert(56%) sepia(94%) saturate(422%) hue-rotate(130deg) brightness(92%) contrast(94%);
+    }
+    
     /* ==================== BUTTONS ==================== */
     .mix-btn {
       display: inline-block;
