@@ -595,11 +595,10 @@
       animation: bounceArrow 2s infinite;
     }
     
-    .mix-hero__scroll-arrow svg {
+    .mix-hero__scroll-arrow img {
       width: 40px;
       height: 40px;
-      fill: white;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)) brightness(0) invert(1);
     }
     
     @keyframes fadeInUp {
@@ -1241,9 +1240,7 @@
       <p class="mix-hero__subtitle" id="hero-subtitle">محصولات آشپزخانه که زندگی شما را متحول می‌کنند</p>
     </div>
     <div class="mix-hero__scroll-arrow" id="scroll-arrow">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
+      <img src="icons/scroll-arrow.svg" alt="Scroll down">
     </div>
   </section>
 
@@ -1547,9 +1544,27 @@
         if (messageQueue.length === 0) {
           messageQueue = [...Array(heroMessages[currentLang].length).keys()].sort(() => Math.random() - 0.5);
         }
-        const msg = heroMessages[currentLang][messageQueue.shift()];
-        document.getElementById('hero-title').textContent = msg.title;
-        document.getElementById('hero-subtitle').textContent = msg.subtitle;
+        
+        const titleEl = document.getElementById('hero-title');
+        const subtitleEl = document.getElementById('hero-subtitle');
+        
+        // Fade out
+        titleEl.style.animation = 'none';
+        subtitleEl.style.animation = 'none';
+        titleEl.style.opacity = '0';
+        subtitleEl.style.opacity = '0';
+        
+        setTimeout(() => {
+          const msg = heroMessages[currentLang][messageQueue.shift()];
+          titleEl.textContent = msg.title;
+          subtitleEl.textContent = msg.subtitle;
+          
+          // Fade in
+          setTimeout(() => {
+            titleEl.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            subtitleEl.style.animation = 'fadeInUp 0.8s ease-out 0.2s forwards';
+          }, 50);
+        }, 400);
       }
       window.heroMessageInterval = setInterval(showNext, 5000);
     }
