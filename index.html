@@ -10,21 +10,21 @@
     /* ==================== FONT FACES ==================== */
     @font-face {
       font-family: 'Kalameh';
-      src: url('/fonts/KALAMEH-REGULAR.woff2') format('woff2');
+      src: url('fonts/KALAMEH-REGULAR.woff2') format('woff2');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Kalameh';
-      src: url('/fonts/KALAMEH-BOLD.woff2') format('woff2');
+      src: url('fonts/KALAMEH-BOLD.woff2') format('woff2');
       font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Kalameh';
-      src: url('/fonts/KALAMEH-BLACK.woff2') format('woff2');
+      src: url('fonts/KALAMEH-BLACK.woff2') format('woff2');
       font-weight: 900;
       font-style: normal;
       font-display: swap;
@@ -32,28 +32,28 @@
     
     @font-face {
       font-family: 'Montserrat';
-      src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
+      src: url('fonts/Montserrat-Regular.woff2') format('woff2');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Montserrat';
-      src: url('/fonts/Montserrat-Medium.woff2') format('woff2');
+      src: url('fonts/Montserrat-Medium.woff2') format('woff2');
       font-weight: 500;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Montserrat';
-      src: url('/fonts/Montserrat-Bold.woff2') format('woff2');
+      src: url('fonts/Montserrat-Bold.woff2') format('woff2');
       font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Montserrat';
-      src: url('/fonts/Montserrat-Black.woff2') format('woff2');
+      src: url('fonts/Montserrat-Black.woff2') format('woff2');
       font-weight: 900;
       font-style: normal;
       font-display: swap;
@@ -1051,8 +1051,8 @@
       </nav>
       
       <a href="#" class="mix-header__logo">
-        <img src="/logos/logo-light.svg" alt="MixPlus Logo" class="logo-light">
-        <img src="/logos/logo-dark.svg" alt="MixPlus Logo" class="logo-dark hidden">
+        <img src="logos/logo-light.svg" alt="MixPlus Logo" class="logo-light">
+        <img src="logos/logo-dark.svg" alt="MixPlus Logo" class="logo-dark hidden">
       </a>
       
       <button class="mix-header__mobile-toggle" id="mobile-toggle">
@@ -1490,9 +1490,9 @@
       document.querySelectorAll('.show-fa').forEach(el => el.classList.toggle('hidden', currentLang !== 'fa'));
       document.querySelectorAll('.show-en').forEach(el => el.classList.toggle('hidden', currentLang !== 'en'));
       
-      document.getElementById('catalog-link').href = `/catalog-${currentLang}.pdf`;
-      document.getElementById('mobile-catalog-link').href = `/catalog-${currentLang}.pdf`;
-      document.getElementById('catalog-btn').href = `/catalog-${currentLang}.pdf`;
+      document.getElementById('catalog-link').href = `docs/catalog-${currentLang}.pdf`;
+      document.getElementById('mobile-catalog-link').href = `docs/catalog-${currentLang}.pdf`;
+      document.getElementById('catalog-btn').href = `docs/catalog-${currentLang}.pdf`;
       document.getElementById('factory-video').src = currentLang === 'fa' ? 'https://www.aparat.com/video/video/embed/videohash/sample/vt/frame' : 'https://www.youtube.com/embed/dQw4w9WgXcQ';
       
       updateProductsSubmenu();
