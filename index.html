@@ -163,7 +163,7 @@
     }
     
     .mix-header__logo img {
-      height: 42px;
+      height: 32px;
       width: auto;
     }
     
@@ -1200,9 +1200,9 @@
   <section class="mix-hero">
     <div class="mix-hero__video-container">
       <video class="mix-hero__video" id="hero-video" autoplay muted playsinline loop>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="videos/hero-01.mp4" type="video/mp4">
       </video>
-      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1920&h=1080&fit=crop" 
+      <img src="images/hero-fallback.jpg" 
            alt="Hero" 
            class="mix-hero__fallback-image hidden" 
            id="hero-fallback">
@@ -1504,9 +1504,9 @@
       document.documentElement.setAttribute('data-theme', theme);
       document.getElementById('theme-icon-sun').classList.toggle('hidden', theme === 'dark');
       document.getElementById('theme-icon-moon').classList.toggle('hidden', theme === 'light');
-      // تغییر لوگو بر اساس تم
-      document.querySelector('.logo-light').classList.toggle('hidden', theme === 'dark');
-      document.querySelector('.logo-dark').classList.toggle('hidden', theme === 'light');
+      // تغییر لوگو بر اساس تم - در light باید dark لوگو باشه
+      document.querySelector('.logo-light').classList.toggle('hidden', theme === 'light');
+      document.querySelector('.logo-dark').classList.toggle('hidden', theme === 'dark');
     }
 
     function toggleTheme() {
