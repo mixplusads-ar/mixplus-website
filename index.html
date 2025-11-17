@@ -1527,16 +1527,16 @@
     }
 
     function updateProductsSubmenu(category = 'hob') {
-      const subs = categories[category][currentLang];
-      const container = document.getElementById('products-subs');
-      container.innerHTML = '';
-      subs.forEach(sub => {
-        const link = document.createElement('a');
-        link.href = '#';
-        link.className = 'mix-megamenu__sub-item';
-        link.textContent = sub.name;
-        container.appendChild(link);
-      });
+  const subs = categories[category][currentLang];
+  const container = document.getElementById('products-subs');
+  container.innerHTML = '';
+  subs.forEach(sub => {
+    const link = document.createElement('a');
+    link.href = `products-catalog.html?category=${category}&sub=${sub.slug}`; // ✅ درست!
+    link.className = 'mix-megamenu__sub-item';
+    link.textContent = sub.name;
+    container.appendChild(link);
+  });
     }
 
     function startHeroMessages() {
