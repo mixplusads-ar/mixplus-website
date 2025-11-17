@@ -332,6 +332,231 @@
 </head>
 <body>
 
+  <!-- ========== شروع هدر ========== -->
+  <div class="mix-header__mobile-overlay" id="mobile-overlay"></div>
+
+  <header class="mix-header" id="header">
+    <div class="mix-header__container">
+      <!-- Right Navigation (RTL: سمت راست) -->
+      <nav class="mix-header__nav mix-header__nav--right">
+        <!-- Products Mega Menu -->
+        <div style="position: relative;">
+          <button class="mix-header__item" id="products-trigger">
+            <span class="text-fa">محصولات</span>
+            <span class="text-en hidden">Products</span>
+          </button>
+          <div class="mix-megamenu" id="products-mega">
+            <div class="mix-megamenu__content">
+              <div class="mix-megamenu__col">
+                <a href="products-catalog.html?category=hob" class="mix-megamenu__root-item" data-category="hob">
+                  <span class="text-fa">اجاق گاز</span>
+                  <span class="text-en hidden">Hob</span>
+                </a>
+                <a href="products-catalog.html?category=sink" class="mix-megamenu__root-item" data-category="sink">
+                  <span class="text-fa">سینک ظرف‌شویی</span>
+                  <span class="text-en hidden">Sink</span>
+                </a>
+                <a href="products-catalog.html?category=oven" class="mix-megamenu__root-item" data-category="oven">
+                  <span class="text-fa">فر توکار</span>
+                  <span class="text-en hidden">Built-in Oven</span>
+                </a>
+                <a href="products-catalog.html?category=hood" class="mix-megamenu__root-item" data-category="hood">
+                  <span class="text-fa">هود</span>
+                  <span class="text-en hidden">Hood</span>
+                </a>
+              </div>
+              <div class="mix-megamenu__col" id="products-subs"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mix-header__divider"></div>
+        
+        <a href="#" class="mix-header__item">
+          <span class="text-fa">نمایندگی‌های مجاز</span>
+          <span class="text-en hidden">Dealers</span>
+        </a>
+        
+        <div class="mix-header__divider"></div>
+        
+        <div style="position: relative;">
+          <button class="mix-header__item" id="aftersales-trigger">
+            <span class="text-fa">خدمات پس از فروش</span>
+            <span class="text-en hidden">After-Sales</span>
+          </button>
+          <div class="mix-megamenu" id="aftersales-mega" style="min-width: 320px;">
+            <div style="padding: 1.5rem;">
+              <a href="#" class="mix-megamenu__sub-item">
+                <span class="text-fa">فرآیند رسیدگی به شکایات</span>
+                <span class="text-en hidden">Complaint Process</span>
+              </a>
+              <a href="#" class="mix-megamenu__sub-item">
+                <span class="text-fa">شرایط گارانتی محصولات</span>
+                <span class="text-en hidden">Warranty Terms</span>
+              </a>
+              <a href="#" class="mix-megamenu__sub-item">
+                <span class="text-fa">درخواست نصب محصول</span>
+                <span class="text-en hidden">Installation Request</span>
+              </a>
+              <a href="#" class="mix-megamenu__sub-item">
+                <span class="text-fa">ثبت شکایت</span>
+                <span class="text-en hidden">Complaint</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mix-header__divider show-en hidden"></div>
+        <a href="#" class="mix-header__item show-en hidden">
+          <span class="text-en">About Us</span>
+        </a>
+      </nav>
+      
+      <!-- Logo -->
+      <a href="index.html" class="mix-header__logo">
+        <img src="logos/logo-light.svg" alt="MixPlus Logo" class="logo-light">
+        <img src="logos/logo-dark.svg" alt="MixPlus Logo" class="logo-dark hidden">
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mix-header__mobile-toggle" id="mobile-toggle">
+        <svg viewBox="0 0 24 24" fill="none">
+          <line x1="3" y1="12" x2="21" y2="12" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="6" x2="21" y2="6" stroke-width="2" stroke-linecap="round"/>
+          <line x1="3" y1="18" x2="21" y2="18" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <!-- Left Navigation -->
+      <nav class="mix-header__nav mix-header__nav--left">
+        <button class="mix-header__icon-btn" id="search-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        
+        <div class="mix-header__divider"></div>
+        
+        <div style="position: relative;">
+          <button class="mix-header__item" id="social-trigger">#</button>
+          <div class="mix-dropdown" id="social-dropdown">
+            <a href="https://www.linkedin.com/company/mixplus/" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/mixplus.co" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@mixplusmovie" target="_blank">YouTube</a>
+            <a href="https://www.aparat.com/mixplus.co" target="_blank">Aparat</a>
+            <a href="https://t.me/mixplus_co_bot" target="_blank">Telegram</a>
+          </div>
+        </div>
+        
+        <div class="mix-header__divider show-fa"></div>
+        <a href="#" class="mix-header__item show-fa">
+          <span class="text-fa">درباره ما</span>
+        </a>
+        
+        <div class="mix-header__divider"></div>
+        
+        <a href="docs/catalog-fa.pdf" class="mix-header__item" target="_blank" id="catalog-link">
+          <span class="text-fa">دانلود کاتالوگ</span>
+          <span class="text-en hidden">Download Catalog</span>
+        </a>
+        
+        <div class="mix-header__divider"></div>
+        
+        <div style="position: relative;">
+          <button class="mix-header__item" id="lang-trigger">
+            <span class="text-fa">فارسی</span>
+            <span class="text-en hidden">English</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin: 0 4px;">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mix-dropdown" id="lang-dropdown">
+            <a href="#" id="switch-lang">
+              <span class="text-fa">English</span>
+              <span class="text-en hidden">فارسی</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="mix-header__divider"></div>
+        
+        <button class="mix-header__icon-btn" id="theme-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-sun">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-moon" class="hidden">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mix-header__mobile-menu" id="mobile-menu">
+    <button class="mix-header__mobile-item" id="mobile-products-trigger">
+      <span class="text-fa">محصولات ▼</span>
+      <span class="text-en hidden">Products ▼</span>
+    </button>
+    <div class="mix-header__mobile-submenu" id="mobile-products">
+      <a href="products-catalog.html?category=hob"><span class="text-fa">اجاق گاز</span></a>
+      <a href="products-catalog.html?category=sink"><span class="text-fa">سینک ظرف‌شویی</span></a>
+      <a href="products-catalog.html?category=oven"><span class="text-fa">فر توکار</span></a>
+      <a href="products-catalog.html?category=hood"><span class="text-fa">هود</span></a>
+    </div>
+    
+    <a href="#" class="mix-header__mobile-item">
+      <span class="text-fa">نمایندگی‌های مجاز</span>
+    </a>
+    
+    <button class="mix-header__mobile-item" id="mobile-aftersales-trigger">
+      <span class="text-fa">خدمات پس از فروش ▼</span>
+    </button>
+    <div class="mix-header__mobile-submenu" id="mobile-aftersales">
+      <a href="#"><span class="text-fa">فرآیند رسیدگی به شکایات</span></a>
+      <a href="#"><span class="text-fa">شرایط گارانتی محصولات</span></a>
+      <a href="#"><span class="text-fa">درخواست نصب محصول</span></a>
+      <a href="#"><span class="text-fa">ثبت شکایت</span></a>
+    </div>
+    
+    <a href="#" class="mix-header__mobile-item">
+      <span class="text-fa">درباره ما</span>
+    </a>
+    
+    <button class="mix-header__mobile-item" id="mobile-social-trigger">
+      <span class="text-fa">شبکه‌های اجتماعی ▼</span>
+    </button>
+    <div class="mix-header__mobile-submenu" id="mobile-social">
+      <a href="https://www.linkedin.com/company/mixplus/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/mixplus.co" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@mixplusmovie" target="_blank">YouTube</a>
+      <a href="https://www.aparat.com/mixplus.co" target="_blank">Aparat</a>
+      <a href="https://t.me/mixplus_co_bot" target="_blank">Telegram</a>
+    </div>
+    
+    <a href="docs/catalog-fa.pdf" class="mix-header__mobile-item" target="_blank">
+      <span class="text-fa">دانلود کاتالوگ</span>
+    </a>
+    
+    <button class="mix-header__mobile-item" id="mobile-lang-switch">
+      <span class="text-fa">🌐 Switch to English</span>
+    </button>
+    
+    <button class="mix-header__mobile-item" id="mobile-theme-toggle">
+      <span class="text-fa">🌓 تغییر تم</span>
+    </button>
+  </div>
+  <!-- ========== پایان هدر ========== -->
+
   <!-- Catalog Container -->
   <div class="catalog-container">
     
