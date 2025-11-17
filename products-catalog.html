@@ -82,16 +82,22 @@
   width: auto;
 }
 
-.logo-dark {
+/* تم لایت → لوگوی dark */
+.logo-light {
   display: none;
 }
 
+.logo-dark {
+  display: block;
+}
+
+/* تم دارک → لوگوی light */
 [data-theme="dark"] .logo-light {
-  display: none;
+  display: block;
 }
 
 [data-theme="dark"] .logo-dark {
-  display: block;
+  display: none;
 }
 
 .mix-header__nav {
