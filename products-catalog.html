@@ -27,7 +27,23 @@
       --card: #1a1d24;
       --stroke: rgba(249, 250, 251, 0.16);
     }
+/* تم لایت → لوگوی dark */
+.logo-light {
+  display: none !important;
+}
 
+.logo-dark {
+  display: block !important;
+}
+
+/* تم دارک → لوگوی light */
+[data-theme="dark"] .logo-light {
+  display: block !important;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: none !important;
+}
     /* ==================== HEADER STYLES ==================== */
 .mix-header {
   position: fixed;
@@ -761,9 +777,9 @@
       
       <!-- Logo -->
       <a href="index.html" class="mix-header__logo">
-        <img src="logos/logo-light.svg" alt="MixPlus Logo" class="logo-light">
-        <img src="logos/logo-dark.svg" alt="MixPlus Logo" class="logo-dark hidden">
-      </a>
+  <img src="logos/logo-light.svg" alt="MixPlus Logo" class="logo-light">
+  <img src="logos/logo-dark.svg" alt="MixPlus Logo" class="logo-dark">
+</a>
       
       <!-- Mobile Menu Toggle -->
       <button class="mix-header__mobile-toggle" id="mobile-toggle">
