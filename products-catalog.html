@@ -1104,7 +1104,81 @@ updatePageTitle();
         renderProducts(e.target.value);
       }, 300);
     });
+    // Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('mix_theme', theme);
+}
+
+const savedTheme = localStorage.getItem('mix_theme') || 'light';
+setTheme(savedTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    setTheme(current === 'light' ? 'dark' : 'light');
+  });
+}
+
+// Header Scroll
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (window.scrollY > 10) {
+    header.classList.add('mix-header--scrolled');
+  } else {
+    header.classList.remove('mix-header--scrolled');
+  }
+});
+
+// Mobile Menu
+const mobileToggle = document.getElementById('mobile-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileOverlay = document.getElementById('mobile-overlay');
+
+if (mobileToggle) {
+  mobileToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+  });
+}
+
+if (mobileOverlay) {
+  mobileOverlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    mobileOverlay.classList.remove('active');
+  });
+}
+
+// Mega Menu Hover
+function setupMegaMenu(triggerId, megaId) {
+  const trigger = document.getElementById(triggerId);
+  const mega = document.getElementById(megaId);
+  if (!trigger || !mega) return;
+  
+  let timeout;
+  
+  trigger.addEventListener('mouseenter', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => mega.classList.add('active'), 250);
+  });
+  
+  trigger.addEventListener('mouseleave', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => { if (!mega.matches(':hover')) mega.classList.remove('active'); }, 250);
+  });
+  
+  mega.addEventListener('mouseenter', () => { clearTimeout(timeout); mega.classList.add('active'); });
+  mega.addEventListener('mouseleave', () => { timeout = setTimeout(() => mega.classList.remove('active'), 250); });
+}
+
+setupMegaMenu('products-trigger', 'products-mega');
+setupMegaMenu('aftersales-trigger', 'aftersales-mega');
+setupMegaMenu('social-trigger', 'social-dropdown');
   </script>
+  
 
 </body>
 </html>
