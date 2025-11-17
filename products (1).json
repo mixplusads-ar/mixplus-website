@@ -1,0 +1,474 @@
+{
+  "categories": [
+    {
+      "id": "hob",
+      "slug": "hob",
+      "nameFa": "اجاق گاز",
+      "nameEn": "Hob",
+      "subcategories": [
+        {
+          "id": "italian-steel",
+          "slug": "italian-steel",
+          "nameFa": "اجاق گاز استیل (قطعات ایتالیایی)",
+          "nameEn": "Italian Steel Hob"
+        },
+        {
+          "id": "iranian-steel",
+          "slug": "iranian-steel",
+          "nameFa": "اجاق گاز استیل (قطعات ایرانی)",
+          "nameEn": "Iranian Steel Hob"
+        },
+        {
+          "id": "italian-glass",
+          "slug": "italian-glass",
+          "nameFa": "اجاق گاز شیشه‌ای (قطعات ایتالیایی)",
+          "nameEn": "Italian Glass Hob"
+        },
+        {
+          "id": "line-glass",
+          "slug": "line-glass",
+          "nameFa": "اجاق گاز لاین",
+          "nameEn": "Line Glass Hob"
+        },
+        {
+          "id": "iranian-glass",
+          "slug": "iranian-glass",
+          "nameFa": "اجاق گاز شیشه‌ای (قطعات ایرانی)",
+          "nameEn": "Iranian Glass Hob"
+        },
+        {
+          "id": "enamel",
+          "slug": "enamel",
+          "nameFa": "اجاق گاز لعابی",
+          "nameEn": "Enamel Hob"
+        },
+        {
+          "id": "electric",
+          "slug": "electric",
+          "nameFa": "اجاق برقی",
+          "nameEn": "Electric Hob"
+        }
+      ]
+    },
+    {
+      "id": "sink",
+      "slug": "sink",
+      "nameFa": "سینک ظرفشویی",
+      "nameEn": "Sink",
+      "subcategories": [
+        {
+          "id": "handmade",
+          "slug": "handmade",
+          "nameFa": "سینک دست‌ساز",
+          "nameEn": "Handmade Sink"
+        },
+        {
+          "id": "topmount",
+          "slug": "topmount",
+          "nameFa": "استیل روکار",
+          "nameEn": "Topmount Steel"
+        },
+        {
+          "id": "undermount",
+          "slug": "undermount",
+          "nameFa": "استیل توکار",
+          "nameEn": "Undermount Steel"
+        },
+        {
+          "id": "semi-fancy",
+          "slug": "semi-fancy",
+          "nameFa": "نیمه فانتزی",
+          "nameEn": "Semi-Fancy"
+        },
+        {
+          "id": "granite",
+          "slug": "granite",
+          "nameFa": "گرانیتی",
+          "nameEn": "Granite"
+        },
+        {
+          "id": "under-cabinet",
+          "slug": "under-cabinet",
+          "nameFa": "زیر کابینتی",
+          "nameEn": "Under-Cabinet"
+        }
+      ]
+    },
+    {
+      "id": "oven",
+      "slug": "oven",
+      "nameFa": "فر توکار",
+      "nameEn": "Built-in Oven",
+      "subcategories": [
+        {
+          "id": "builtin-oven",
+          "slug": "builtin-oven",
+          "nameFa": "فر توکار",
+          "nameEn": "Built-in Oven"
+        }
+      ]
+    },
+    {
+      "id": "hood",
+      "slug": "hood",
+      "nameFa": "هود",
+      "nameEn": "Hood",
+      "subcategories": [
+        {
+          "id": "builtin-hood",
+          "slug": "builtin-hood",
+          "nameFa": "هود توکار",
+          "nameEn": "Built-in Hood"
+        },
+        {
+          "id": "wall-hood",
+          "slug": "wall-hood",
+          "nameFa": "هود دیواری",
+          "nameEn": "Wall Hood"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "CG9571M",
+      "productId": "CG9571M",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "238,500,000",
+      "priceNumber": 238500000,
+      "image1": "products-grid-photos/hob/CG9571M-1.jpg",
+      "image2": "products-grid-photos/hob/CG9571M-2.jpg"
+    },
+    {
+      "id": "GP511",
+      "productId": "GP511",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "236,000,000",
+      "priceNumber": 236000000,
+      "image1": "products-grid-photos/hob/GP511-1.jpg",
+      "image2": "products-grid-photos/hob/GP511-2.jpg"
+    },
+    {
+      "id": "GT502",
+      "productId": "GT502",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "240,000,000",
+      "priceNumber": 240000000,
+      "image1": "products-grid-photos/hob/GT502-1.jpg",
+      "image2": "products-grid-photos/hob/GT502-2.jpg"
+    },
+    {
+      "id": "CG8507",
+      "productId": "CG8507",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "195,000,000",
+      "priceNumber": 195000000,
+      "image1": "products-grid-photos/hob/CG8507-1.jpg",
+      "image2": "products-grid-photos/hob/CG8507-2.jpg"
+    },
+    {
+      "id": "CG8506",
+      "productId": "CG8506",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "195,000,000",
+      "priceNumber": 195000000,
+      "image1": "products-grid-photos/hob/CG8506-1.jpg",
+      "image2": "products-grid-photos/hob/CG8506-2.jpg"
+    },
+    {
+      "id": "CG8505",
+      "productId": "CG8505",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "195,000,000",
+      "priceNumber": 195000000,
+      "image1": "products-grid-photos/hob/CG8505-1.jpg",
+      "image2": "products-grid-photos/hob/CG8505-2.jpg"
+    },
+    {
+      "id": "G502LW",
+      "productId": "G502LW",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "220,000,000",
+      "priceNumber": 220000000,
+      "image1": "products-grid-photos/hob/G502LW-1.jpg",
+      "image2": "products-grid-photos/hob/G502LW-2.jpg"
+    },
+    {
+      "id": "G502RW",
+      "productId": "G502RW",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "220,000,000",
+      "priceNumber": 220000000,
+      "image1": "products-grid-photos/hob/G502RW-1.jpg",
+      "image2": "products-grid-photos/hob/G502RW-2.jpg"
+    },
+    {
+      "id": "G502W",
+      "productId": "G502W",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "220,000,000",
+      "priceNumber": 220000000,
+      "image1": "products-grid-photos/hob/G502W-1.jpg",
+      "image2": "products-grid-photos/hob/G502W-2.jpg"
+    },
+    {
+      "id": "PARDYC-B",
+      "productId": "PARDYC B",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "195,000,000",
+      "priceNumber": 195000000,
+      "image1": "products-grid-photos/hob/PARDYC-B-1.jpg",
+      "image2": "products-grid-photos/hob/PARDYC-B-2.jpg"
+    },
+    {
+      "id": "PARDYC-W",
+      "productId": "PARDYC W",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "220,000,000",
+      "priceNumber": 220000000,
+      "image1": "products-grid-photos/hob/PARDYC-W-1.jpg",
+      "image2": "products-grid-photos/hob/PARDYC-W-2.jpg"
+    },
+    {
+      "id": "CG8504",
+      "productId": "CG8504",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "195,000,000",
+      "priceNumber": 195000000,
+      "image1": "products-grid-photos/hob/CG8504-1.jpg",
+      "image2": "products-grid-photos/hob/CG8504-2.jpg"
+    },
+    {
+      "id": "CG8503",
+      "productId": "CG8503",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "195,000,000",
+      "priceNumber": 195000000,
+      "image1": "products-grid-photos/hob/CG8503-1.jpg",
+      "image2": "products-grid-photos/hob/CG8503-2.jpg"
+    },
+    {
+      "id": "APPLE-B",
+      "productId": "APPLE B",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "195,000,000",
+      "priceNumber": 195000000,
+      "image1": "products-grid-photos/hob/APPLE-B-1.jpg",
+      "image2": "products-grid-photos/hob/APPLE-B-2.jpg"
+    },
+    {
+      "id": "APPLE-W",
+      "productId": "APPLE W",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "220,000,000",
+      "priceNumber": 220000000,
+      "image1": "products-grid-photos/hob/APPLE-W-1.jpg",
+      "image2": "products-grid-photos/hob/APPLE-W-2.jpg"
+    },
+    {
+      "id": "APPLE-M",
+      "productId": "APPLE M",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "205,000,000",
+      "priceNumber": 205000000,
+      "image1": "products-grid-photos/hob/APPLE-M-1.jpg",
+      "image2": "products-grid-photos/hob/APPLE-M-2.jpg"
+    },
+    {
+      "id": "519M",
+      "productId": "519M",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "153,000,000",
+      "priceNumber": 153000000,
+      "image1": "products-grid-photos/hob/519M-1.jpg",
+      "image2": "products-grid-photos/hob/519M-2.jpg"
+    },
+    {
+      "id": "501G",
+      "productId": "501G",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "145,000,000",
+      "priceNumber": 145000000,
+      "image1": "products-grid-photos/hob/501G-1.jpg",
+      "image2": "products-grid-photos/hob/501G-2.jpg"
+    },
+    {
+      "id": "525M",
+      "productId": "525M",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "151,000,000",
+      "priceNumber": 151000000,
+      "image1": "products-grid-photos/hob/525M-1.jpg",
+      "image2": "products-grid-photos/hob/525M-2.jpg"
+    },
+    {
+      "id": "512G",
+      "productId": "512G",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "147,000,000",
+      "priceNumber": 147000000,
+      "image1": "products-grid-photos/hob/512G-1.jpg",
+      "image2": "products-grid-photos/hob/512G-2.jpg"
+    },
+    {
+      "id": "511G",
+      "productId": "511G",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "147,000,000",
+      "priceNumber": 147000000,
+      "image1": "products-grid-photos/hob/511G-1.jpg",
+      "image2": "products-grid-photos/hob/511G-2.jpg"
+    },
+    {
+      "id": "521G",
+      "productId": "521G",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "147,000,000",
+      "priceNumber": 147000000,
+      "image1": "products-grid-photos/hob/521G-1.jpg",
+      "image2": "products-grid-photos/hob/521G-2.jpg"
+    },
+    {
+      "id": "G514",
+      "productId": "G514",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "209,000,000",
+      "priceNumber": 209000000,
+      "image1": "products-grid-photos/hob/G514-1.jpg",
+      "image2": "products-grid-photos/hob/G514-2.jpg"
+    },
+    {
+      "id": "G514R",
+      "productId": "G514R",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "238,000,000",
+      "priceNumber": 238000000,
+      "image1": "products-grid-photos/hob/G514R-1.jpg",
+      "image2": "products-grid-photos/hob/G514R-2.jpg"
+    },
+    {
+      "id": "G514W",
+      "productId": "G514W",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "233,000,000",
+      "priceNumber": 233000000,
+      "image1": "products-grid-photos/hob/G514W-1.jpg",
+      "image2": "products-grid-photos/hob/G514W-2.jpg"
+    },
+    {
+      "id": "G510",
+      "productId": "G510",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "205,000,000",
+      "priceNumber": 205000000,
+      "image1": "products-grid-photos/hob/G510-1.jpg",
+      "image2": "products-grid-photos/hob/G510-2.jpg"
+    },
+    {
+      "id": "LUNA",
+      "productId": "LUNA",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "246,000,000",
+      "priceNumber": 246000000,
+      "image1": "products-grid-photos/hob/LUNA-1.jpg",
+      "image2": "products-grid-photos/hob/LUNA-2.jpg"
+    },
+    {
+      "id": "419M",
+      "productId": "419M",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "99,800,000",
+      "priceNumber": 99800000,
+      "image1": "products-grid-photos/hob/419M-1.jpg",
+      "image2": "products-grid-photos/hob/419M-2.jpg"
+    },
+    {
+      "id": "403G",
+      "productId": "403G",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "135,000,000",
+      "priceNumber": 135000000,
+      "image1": "products-grid-photos/hob/403G-1.jpg",
+      "image2": "products-grid-photos/hob/403G-2.jpg"
+    },
+    {
+      "id": "403GW",
+      "productId": "403GW",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "155,000,000",
+      "priceNumber": 155000000,
+      "image1": "products-grid-photos/hob/403GW-1.jpg",
+      "image2": "products-grid-photos/hob/403GW-2.jpg"
+    },
+    {
+      "id": "302G",
+      "productId": "302G",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "74,500,000",
+      "priceNumber": 74500000,
+      "image1": "products-grid-photos/hob/302G-1.jpg",
+      "image2": "products-grid-photos/hob/302G-2.jpg"
+    },
+    {
+      "id": "303G",
+      "productId": "303G",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "99,500,000",
+      "priceNumber": 99500000,
+      "image1": "products-grid-photos/hob/303G-1.jpg",
+      "image2": "products-grid-photos/hob/303G-2.jpg"
+    },
+    {
+      "id": "203G",
+      "productId": "203G",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "82,000,000",
+      "priceNumber": 82000000,
+      "image1": "products-grid-photos/hob/203G-1.jpg",
+      "image2": "products-grid-photos/hob/203G-2.jpg"
+    },
+    {
+      "id": "G401H",
+      "productId": "G401H",
+      "category": "hob",
+      "subcategory": "italian-glass",
+      "price": "175,000,000",
+      "priceNumber": 175000000,
+      "image1": "products-grid-photos/hob/G401H-1.jpg",
+      "image2": "products-grid-photos/hob/G401H-2.jpg"
+    }
+  ]
+}
