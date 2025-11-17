@@ -1623,12 +1623,12 @@
     setupMegaMenu('social-trigger', 'social-dropdown');
 
     document.querySelectorAll('.mix-megamenu__root-item').forEach(item => {
-      item.addEventListener('mouseenter', function() {
-        document.querySelectorAll('.mix-megamenu__root-item').forEach(i => i.classList.remove('active'));
-        this.classList.add('active');
-        updateProductsSubmenu(this.getAttribute('data-category'));
-      });
-    });
+  item.addEventListener('click', function() {
+    const category = this.getAttribute('data-category');
+    // اضافه کنید:
+    window.location.href = `products-catalog.html?category=${category}`;
+  });
+});
 
     // Lang dropdown (click)
     document.getElementById('lang-trigger').addEventListener('click', e => {
