@@ -438,19 +438,17 @@
     
     // Render products
     function renderProducts(searchQuery = '') {
-  let filtered = allProducts.filter(p => p.category === currentCategory);
-  
-  // اگر subcategory انتخاب شده و "all" نیست، فیلتر کن
-  if (currentSubcategory && currentSubcategory !== 'all') {
-    filtered = filtered.filter(p => p.subcategory === currentSubcategory);
-  }
-  
-  // جستجو
-  if (searchQuery.trim()) {
-    filtered = filtered.filter(p => 
-      p.productId.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }
+      let filtered = allProducts.filter(p => 
+        p.category === currentCategory && 
+        p.subcategory === currentSubcategory
+      );
+      
+      // Apply search filter
+      if (searchQuery.trim()) {
+        filtered = filtered.filter(p => 
+          p.productId.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      }
       
       const grid = document.getElementById('products-grid');
       const count = document.getElementById('product-count');
