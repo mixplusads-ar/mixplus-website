@@ -6,48 +6,14 @@
       "nameFa": "اجاق گاز",
       "nameEn": "Hob",
       "subcategories": [
-        {
-          "id": "italian-steel",
-          "slug": "italian-steel",
-          "nameFa": "اجاق گاز استیل (قطعات ایتالیایی)",
-          "nameEn": "Italian Steel Hob"
-        },
-        {
-          "id": "iranian-steel",
-          "slug": "iranian-steel",
-          "nameFa": "اجاق گاز استیل (قطعات ایرانی)",
-          "nameEn": "Iranian Steel Hob"
-        },
-        {
-          "id": "italian-glass",
-          "slug": "italian-glass",
-          "nameFa": "اجاق گاز شیشه‌ای (قطعات ایتالیایی)",
-          "nameEn": "Italian Glass Hob"
-        },
-        {
-          "id": "line-glass",
-          "slug": "line-glass",
-          "nameFa": "اجاق گاز لاین",
-          "nameEn": "Line Glass Hob"
-        },
-        {
-          "id": "iranian-glass",
-          "slug": "iranian-glass",
-          "nameFa": "اجاق گاز شیشه‌ای (قطعات ایرانی)",
-          "nameEn": "Iranian Glass Hob"
-        },
-        {
-          "id": "enamel",
-          "slug": "enamel",
-          "nameFa": "اجاق گاز لعابی",
-          "nameEn": "Enamel Hob"
-        },
-        {
-          "id": "electric",
-          "slug": "electric",
-          "nameFa": "اجاق برقی",
-          "nameEn": "Electric Hob"
-        }
+        { "id": "all", "slug": "all", "nameFa": "همه", "nameEn": "All" },
+        { "id": "italian-steel", "slug": "italian-steel", "nameFa": "اجاق گاز استیل (قطعات ایتالیایی)", "nameEn": "Italian Steel Hob" },
+        { "id": "iranian-steel", "slug": "iranian-steel", "nameFa": "اجاق گاز استیل (قطعات ایرانی)", "nameEn": "Iranian Steel Hob" },
+        { "id": "italian-glass", "slug": "italian-glass", "nameFa": "اجاق گاز شیشه‌ای (قطعات ایتالیایی)", "nameEn": "Italian Glass Hob" },
+        { "id": "line-glass", "slug": "line-glass", "nameFa": "اجاق گاز لاین", "nameEn": "Line Glass Hob" },
+        { "id": "iranian-glass", "slug": "iranian-glass", "nameFa": "اجاق گاز شیشه‌ای (قطعات ایرانی)", "nameEn": "Iranian Glass Hob" },
+        { "id": "enamel", "slug": "enamel", "nameFa": "اجاق گاز لعابی", "nameEn": "Enamel Hob" },
+        { "id": "electric", "slug": "electric", "nameFa": "اجاق برقی", "nameEn": "Electric Hob" }
       ]
     },
     {
@@ -56,42 +22,13 @@
       "nameFa": "سینک ظرفشویی",
       "nameEn": "Sink",
       "subcategories": [
-        {
-          "id": "handmade",
-          "slug": "handmade",
-          "nameFa": "سینک دست‌ساز",
-          "nameEn": "Handmade Sink"
-        },
-        {
-          "id": "topmount",
-          "slug": "topmount",
-          "nameFa": "استیل روکار",
-          "nameEn": "Topmount Steel"
-        },
-        {
-          "id": "undermount",
-          "slug": "undermount",
-          "nameFa": "استیل توکار",
-          "nameEn": "Undermount Steel"
-        },
-        {
-          "id": "semi-fancy",
-          "slug": "semi-fancy",
-          "nameFa": "نیمه فانتزی",
-          "nameEn": "Semi-Fancy"
-        },
-        {
-          "id": "granite",
-          "slug": "granite",
-          "nameFa": "گرانیتی",
-          "nameEn": "Granite"
-        },
-        {
-          "id": "under-cabinet",
-          "slug": "under-cabinet",
-          "nameFa": "زیر کابینتی",
-          "nameEn": "Under-Cabinet"
-        }
+        { "id": "all", "slug": "all", "nameFa": "همه", "nameEn": "All" },
+        { "id": "handmade", "slug": "handmade", "nameFa": "سینک دست‌ساز", "nameEn": "Handmade Sink" },
+        { "id": "topmount", "slug": "topmount", "nameFa": "استیل روکار", "nameEn": "Topmount Steel" },
+        { "id": "undermount", "slug": "undermount", "nameFa": "استیل توکار", "nameEn": "Undermount Steel" },
+        { "id": "semi-fancy", "slug": "semi-fancy", "nameFa": "نیمه فانتزی", "nameEn": "Semi-Fancy" },
+        { "id": "granite", "slug": "granite", "nameFa": "گرانیتی", "nameEn": "Granite" },
+        { "id": "under-cabinet", "slug": "under-cabinet", "nameFa": "زیر کابینتی", "nameEn": "Under-Cabinet" }
       ]
     },
     {
@@ -100,12 +37,9 @@
       "nameFa": "فر توکار",
       "nameEn": "Built-in Oven",
       "subcategories": [
-        {
-          "id": "builtin-oven",
-          "slug": "builtin-oven",
-          "nameFa": "فر توکار",
-          "nameEn": "Built-in Oven"
-        }
+        { "id": "all", "slug": "all", "nameFa": "همه", "nameEn": "All" },
+        { "id": "builtin-oven", "slug": "builtin-oven", "nameFa": "فر توکار", "nameEn": "Built-in Oven" },
+        { "id": "oven-toaster", "slug": "oven-toaster", "nameFa": "آون توستر", "nameEn": "Oven Toaster" }
       ]
     },
     {
@@ -114,18 +48,9 @@
       "nameFa": "هود",
       "nameEn": "Hood",
       "subcategories": [
-        {
-          "id": "builtin-hood",
-          "slug": "builtin-hood",
-          "nameFa": "هود توکار",
-          "nameEn": "Built-in Hood"
-        },
-        {
-          "id": "wall-hood",
-          "slug": "wall-hood",
-          "nameFa": "هود دیواری",
-          "nameEn": "Wall Hood"
-        }
+        { "id": "all", "slug": "all", "nameFa": "همه", "nameEn": "All" },
+        { "id": "builtin-hood", "slug": "builtin-hood", "nameFa": "هود توکار", "nameEn": "Built-in Hood" },
+        { "id": "wall-hood", "slug": "wall-hood", "nameFa": "هود دیواری", "nameEn": "Wall Hood" }
       ]
     }
   ],
