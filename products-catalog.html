@@ -390,25 +390,20 @@
     let currentCategory = urlParams.get('category') || 'hob';
     let currentSubcategory = urlParams.get('sub') || 'all';
 
-    function updatePageTitle() {
-  const cat = categories.find(c => c.id === currentCategory);
-  const titleEl = document.getElementById('page-title');
-  const breadcrumbCat = document.getElementById('current-category');
+    // تابع به‌روزرسانی عنوان صفحه
+function updatePageTitle() {
+  const categoryMap = {
+    'hob': { fa: 'اجاق گاز', en: 'Hob' },
+    'sink': { fa: 'سینک ظرفشویی', en: 'Sink' },
+    'oven': { fa: 'فر توکار', en: 'Built-in Oven' },
+    'hood': { fa: 'هود', en: 'Hood' }
+  };
   
-  if (cat) {
-    const categoryName = currentLang === 'fa' ? cat.nameFa : cat.nameEn;
-    
-    if (currentSubcategory === 'all') {
-      titleEl.textContent = categoryName;
-      if (breadcrumbCat) breadcrumbCat.textContent = categoryName;
-    } else {
-      const sub = cat.subcategories.find(s => s.id === currentSubcategory);
-      if (sub) {
-        const subName = currentLang === 'fa' ? sub.nameFa : sub.nameEn;
-        titleEl.textContent = subName;
-        if (breadcrumbCat) breadcrumbCat.textContent = subName;
-      }
-    }
+  const titleEl = document.getElementById('page-title');
+  const lang = document.documentElement.getAttribute('lang') || 'fa';
+  
+  if (categoryMap[currentCategory]) {
+    titleEl.textContent = categoryMap[currentCategory][lang];
   }
 }
 
