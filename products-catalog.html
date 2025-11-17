@@ -389,6 +389,31 @@
     const urlParams = new URLSearchParams(window.location.search);
     let currentCategory = urlParams.get('category') || 'hob';
     let currentSubcategory = urlParams.get('sub') || 'all';
+
+    function updatePageTitle() {
+  const cat = categories.find(c => c.id === currentCategory);
+  const titleEl = document.getElementById('page-title');
+  const breadcrumbCat = document.getElementById('current-category');
+  
+  if (cat) {
+    const categoryName = currentLang === 'fa' ? cat.nameFa : cat.nameEn;
+    
+    if (currentSubcategory === 'all') {
+      titleEl.textContent = categoryName;
+      if (breadcrumbCat) breadcrumbCat.textContent = categoryName;
+    } else {
+      const sub = cat.subcategories.find(s => s.id === currentSubcategory);
+      if (sub) {
+        const subName = currentLang === 'fa' ? sub.nameFa : sub.nameEn;
+        titleEl.textContent = subName;
+        if (breadcrumbCat) breadcrumbCat.textContent = subName;
+      }
+    }
+  }
+}
+
+// و بعد از fetch کردن data، این را صدا بزنید:
+updatePageTitle();
     
     // Fetch products data
     fetch('products.json')
