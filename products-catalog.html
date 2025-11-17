@@ -11,38 +11,336 @@
   
   <style>
     /* ==================== CSS VARIABLES ==================== */
-    :root {
-      --font-fa: 'Vazirmatn', sans-serif;
-      --font-en: 'Montserrat', sans-serif;
-      --brand: #0fa99c;
-      --bg: #ffffff;
-      --fg: #111111;
-      --card: #f9fafb;
-      --stroke: rgba(17, 17, 17, 0.16);
-    }
-    
-    [data-theme="dark"] {
-      --bg: #0a0c10;
-      --fg: #f9fafb;
-      --card: #1a1d24;
-      --stroke: rgba(249, 250, 251, 0.16);
-    }
-/* تم لایت → لوگوی dark */
-.logo-light {
-  display: none !important;
+    /* ==================== CATALOG PAGE - MINIMAL DESIGN ==================== */
+.catalog-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 8rem 3rem 4rem;
 }
 
-.logo-dark {
-  display: block !important;
+/* Header Row: Title + Search */
+.catalog-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
 }
 
-/* تم دارک → لوگوی light */
-[data-theme="dark"] .logo-light {
-  display: block !important;
+.catalog-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0;
 }
 
-[data-theme="dark"] .logo-dark {
-  display: none !important;
+/* Search - Minimal Rounded */
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 0.85rem 3rem 0.85rem 1.5rem;
+  border: 1px solid var(--stroke);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--fg);
+  transition: all 0.3s ease;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(15, 169, 156, 0.08);
+}
+
+.search-box::placeholder {
+  color: var(--fg);
+  opacity: 0.4;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  opacity: 0.4;
+}
+
+/* Collections Navigation - Minimal */
+.collections-nav {
+  margin-bottom: 3rem;
+}
+
+.collections-nav__content {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.collections-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--fg);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.collections-list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--fg);
+  font-size: 0.95rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  position: relative;
+  opacity: 0.6;
+}
+
+.category-btn:hover {
+  opacity: 1;
+}
+
+.category-btn.active {
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Active Underline - Brand Color */
+.category-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+/* Minimal Divider Line */
+.collections-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--stroke);
+  opacity: 0.3;
+}
+
+/* Product Count - Subtle */
+.catalog-count {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Product Card - Minimal */
+.product-card {
+  position: relative;
+  background: transparent;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: var(--card);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.product-image--primary {
+  opacity: 1;
+  z-index: 1;
+}
+
+.product-image--hover {
+  opacity: 0;
+  z-index: 2;
+}
+
+.product-card:hover .product-image--primary {
+  opacity: 0;
+}
+
+.product-card:hover .product-image--hover {
+  opacity: 1;
+}
+
+.product-info {
+  padding: 0;
+  text-align: center;
+}
+
+.product-code {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--fg);
+  margin-bottom: 0.35rem;
+  font-family: var(--font-en);
+  letter-spacing: 0.3px;
+}
+
+.product-price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--fg);
+  opacity: 0.7;
+  font-family: var(--font-fa);
+}
+
+/* Loading & No Results */
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.1rem;
+  color: var(--fg);
+  opacity: 0.5;
+  grid-column: 1 / -1;
+}
+
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  grid-column: 1 / -1;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.no-results-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.no-results-text {
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .catalog-container {
+    padding: 6rem 2rem 3rem;
+  }
+  
+  .catalog-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .search-container {
+    max-width: 100%;
+  }
+  
+  .collections-nav__content {
+    gap: 1.5rem;
+  }
+  
+  .collections-list {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-title {
+    font-size: 1.5rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .collections-label {
+    font-size: 0.75rem;
+  }
+  
+  .category-btn {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .collections-nav__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }
     /* ==================== HEADER STYLES ==================== */
 .mix-header {
@@ -922,21 +1220,17 @@
 
   <!-- Catalog Container -->
   <div class="catalog-container">
+  
+  <!-- Header Row: Title + Search -->
+  <div class="catalog-header-row">
+    <h1 class="catalog-title" id="page-title">اجاق گاز</h1>
     
-    
-    <!-- Page Header -->
-    <div class="catalog-header">
-      <h1 class="catalog-title" id="page-title">اجاق گاز شیشه‌ای (قطعات ایتالیایی)</h1>
-      <p class="catalog-count" id="product-count">در حال بارگذاری...</p>
-    </div>
-    
-    <!-- Search Bar -->
     <div class="search-container">
       <input 
         type="text" 
         class="search-box" 
         id="search-input"
-        placeholder="جستجوی کد محصول... (مثال: CG9571M)"
+        placeholder="جستجو..."
         autocomplete="off"
       >
       <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -944,18 +1238,28 @@
         <path d="m21 21-4.35-4.35"></path>
       </svg>
     </div>
-    
-    <!-- Category Switcher -->
-    <div class="category-switcher" id="category-switcher">
-      <!-- Will be populated by JavaScript -->
-    </div>
-    
-    <!-- Products Grid -->
-    <div class="products-grid" id="products-grid">
-      <div class="loading">در حال بارگذاری محصولات...</div>
-    </div>
-    
   </div>
+  
+  <!-- Collections Navigation -->
+  <div class="collections-nav">
+    <div class="collections-nav__content">
+      <span class="collections-label">Collections</span>
+      <div class="collections-list" id="category-switcher">
+        <!-- Will be populated by JavaScript -->
+      </div>
+    </div>
+    <div class="collections-divider"></div>
+  </div>
+  
+  <!-- Product Count -->
+  <p class="catalog-count" id="product-count">در حال بارگذاری...</p>
+  
+  <!-- Products Grid -->
+  <div class="products-grid" id="products-grid">
+    <div class="loading">در حال بارگذاری محصولات...</div>
+  </div>
+  
+</div>
 
   <!-- JavaScript -->
   <script>
