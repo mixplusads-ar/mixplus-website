@@ -1380,16 +1380,16 @@ function checkScrollButtons() {
   
   // فلش راست: نمایش بده اگه هنوز میشه به چپ رفت (ابتدای لیست)
   if (hasOverflow && scrollLeft < maxScroll - 5) {
-    arrowRight.classList.add('visible');
+    arrowLeft.classList.add('visible');
   } else {
-    arrowRight.classList.remove('visible');
+    arrowLeft.classList.remove('visible');
   }
   
   // فلش چپ: نمایش بده اگه از ابتدا جلوتر رفتیم (میشه برگشت)
   if (hasOverflow && scrollLeft > 5) {
-    arrowLeft.classList.add('visible');
+    arrowRight.classList.add('visible');
   } else {
-    arrowLeft.classList.remove('visible');
+    arrowRight.classList.remove('visible');
   }
 }
 
