@@ -489,6 +489,7 @@ body {
   flex-wrap: nowrap;
   width: max-content;
   min-width: 100%;
+  padding: 0 60px;
 }
 
 /* Navigation Arrows */
@@ -1395,7 +1396,7 @@ function checkScrollButtons() {
 // کلیک روی فلش راست (اسکرول به چپ - در RTL به سمت انتهای لیست)
 if (arrowRight) {
   arrowRight.addEventListener('click', () => {
-    navContent.scrollBy({ left: 200, behavior: 'smooth' });
+    navContent.scrollBy({ left: -200, behavior: 'smooth' });
     setTimeout(checkScrollButtons, 350);
   });
 }
@@ -1403,7 +1404,7 @@ if (arrowRight) {
 // کلیک روی فلش چپ (اسکرول به راست - در RTL به سمت ابتدای لیست)
 if (arrowLeft) {
   arrowLeft.addEventListener('click', () => {
-    navContent.scrollBy({ left: -200, behavior: 'smooth' });
+    navContent.scrollBy({ left: 200, behavior: 'smooth' });
     setTimeout(checkScrollButtons, 350);
   });
 }
