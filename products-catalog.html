@@ -1,1010 +1,834 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" data-theme="light" class="theme-light lang-fa">
+<html lang="fa" dir="rtl" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">میکس‌پلاس | MixPlus - محصولات آشپزخانه با کیفیت و طراحی ایتالیایی</title>
-  <meta name="description" id="page-description" content="میکس‌پلاس، تولیدکننده اجاق گاز، سینک ظرف‌شویی، فر توکار و هود با کیفیت برتر">
+  <title>اجاق گاز شیشه‌ای (قطعات ایتالیایی) | میکس‌پلاس</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700;900&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   
   <style>
-    /* ==================== FONT FACES ==================== */
-    @font-face {
-      font-family: 'Kalameh';
-      src: url('fonts/KALAMEH-REGULAR.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Kalameh';
-      src: url('fonts/KALAMEH-BOLD.woff2') format('woff2');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Kalameh';
-      src: url('fonts/KALAMEH-BLACK.woff2') format('woff2');
-      font-weight: 900;
-      font-style: normal;
-      font-display: swap;
-    }
-    
-    @font-face {
-      font-family: 'Montserrat';
-      src: url('fonts/Montserrat-Regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Montserrat';
-      src: url('fonts/Montserrat-Medium.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Montserrat';
-      src: url('fonts/Montserrat-Bold.woff2') format('woff2');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Montserrat';
-      src: url('fonts/Montserrat-Black.woff2') format('woff2');
-      font-weight: 900;
-      font-style: normal;
-      font-display: swap;
-    }
-    
-    /* ==================== VARIABLES ==================== */
-    :root {
-      --font-fa: 'Kalameh', sans-serif;
-      --font-en: 'Montserrat', sans-serif;
-      --brand: #0fa99c;
-      --bg: #ffffff;
-      --fg: #111111;
-      --card: #f9fafb;
-      --stroke: rgba(17, 17, 17, 0.16);
-    }
-    
-    [data-theme="dark"] {
-      --bg: #0a0c10;
-      --fg: #f9fafb;
-      --card: #1a1d24;
-      --stroke: rgba(249, 250, 251, 0.16);
-    }
-    
-    /* ==================== BASE ==================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: var(--font-fa);
-      background-color: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    
-    .lang-en body {
-      font-family: var(--font-en);
-    }
-    
-    .hidden {
-      display: none !important;
-    }
-    
-    /* ==================== HEADER ==================== */
-    .mix-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(8px);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    [data-theme="dark"] .mix-header {
-      background: rgba(10, 12, 16, 0.55);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    
-    .mix-header--scrolled {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--stroke);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-    }
-    
-    [data-theme="dark"] .mix-header--scrolled {
-      background: rgba(10, 12, 16, 0.95);
-      border-bottom: 1px solid var(--stroke);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    .mix-header__container {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 0 clamp(1rem, 3vw, 2.5rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-      gap: clamp(1rem, 3vw, 4.2rem);
-    }
-    
-    .lang-fa .mix-header__container {
-      flex-direction: row;
-    }
-    
-    .lang-en .mix-header__container {
-      flex-direction: row-reverse;
-    }
-    
-    .mix-header__logo {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      padding: 0 2rem;
-      order: 2;
-    }
-    
-    .mix-header__logo img {
-      height: 32px;
-      width: auto;
-    }
-    
-    .mix-header__nav {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex: 1;
-    }
-    
-    .lang-fa .mix-header__nav--right {
-      justify-content: flex-end;
-      order: 1;
-    }
-    
-    .lang-fa .mix-header__nav--left {
-      justify-content: flex-start;
-      order: 3;
-    }
-    
-    .lang-en .mix-header__nav--right {
-      justify-content: flex-start;
-      order: 3;
-    }
-    
-    .lang-en .mix-header__nav--left {
-      justify-content: flex-end;
-      order: 1;
-    }
-    
-    .mix-header__item {
-      position: relative;
-      padding: 0.5rem 0.75rem;
-      color: var(--fg);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: color 0.2s ease;
-      white-space: nowrap;
-      background: none;
-      border: none;
-      font-family: inherit;
-    }
-    
-    .mix-header__item:hover {
-      color: var(--brand);
-    }
-    
-    .mix-header__divider {
-      width: 1px;
-      height: 20px;
-      background: var(--stroke);
-      margin: 0 0.25rem;
-    }
-    
-    .mix-header__icon-btn {
-      background: none;
-      border: none;
-      color: var(--fg);
-      cursor: pointer;
-      padding: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: color 0.2s ease;
-    }
-    
-    .mix-header__icon-btn:hover {
-      color: var(--brand);
-    }
-    
-    /* ==================== MEGA MENU ==================== */
-    .mix-megamenu {
-      position: absolute;
-      top: calc(100% + 10px);
-      background: var(--bg);
-      border: 1px solid var(--stroke);
-      border-radius: 14px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.25s ease;
-      min-width: 480px;
-      z-index: 100;
-    }
-    
-    .lang-fa .mix-megamenu {
-      right: 0;
-    }
-    
-    .lang-en .mix-megamenu {
-      left: 0;
-    }
-    
-    [data-theme="dark"] .mix-megamenu {
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    }
-    
-    .mix-megamenu.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    
-    .mix-megamenu__content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-    
-    .mix-megamenu__col {
-      padding: 1.5rem;
-    }
-    
-    .lang-fa .mix-megamenu__col:first-child {
-      border-left: 1px solid var(--stroke);
-    }
-    
-    .lang-en .mix-megamenu__col:first-child {
-      border-right: 1px solid var(--stroke);
-    }
-    
-    .mix-megamenu__root-item {
-      padding: 0.75rem 1rem;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: all 0.2s ease;
-      position: relative;
-      margin-bottom: 0.25rem;
-    }
-    
-    .mix-megamenu__root-item:hover,
-    .mix-megamenu__root-item.active {
-      color: var(--brand);
-      font-weight: 700;
-      background: rgba(15, 169, 156, 0.05);
-    }
-    
-    .lang-fa .mix-megamenu__root-item.active::before {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 3px;
-      height: 60%;
-      background: var(--brand);
-      border-radius: 2px;
-    }
-    
-    .lang-en .mix-megamenu__root-item.active::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 3px;
-      height: 60%;
-      background: var(--brand);
-      border-radius: 2px;
-    }
-    
-    .mix-megamenu__sub-item {
-      padding: 0.6rem 1rem;
-      color: var(--fg);
-      text-decoration: none;
-      display: block;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-    }
-    
-    .mix-megamenu__sub-item:hover {
-      color: var(--brand);
-      background: rgba(15, 169, 156, 0.05);
-    }
-    
-    /* ==================== DROPDOWN ==================== */
-    .mix-dropdown {
-      position: absolute;
-      top: calc(100% + 10px);
-      right: 0;
-      background: var(--bg);
-      border: 1px solid var(--stroke);
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.25s ease;
-      min-width: 180px;
-      z-index: 100;
-    }
-    
-    .mix-dropdown.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    
-    .mix-dropdown a {
-      display: block;
-      padding: 0.75rem 1.25rem;
-      color: var(--fg);
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    
-    .mix-dropdown a:hover {
-      color: var(--brand);
-      background: rgba(15, 169, 156, 0.05);
-    }
-    
-    .mix-dropdown a:first-child {
-      border-radius: 10px 10px 0 0;
-    }
-    
-    .mix-dropdown a:last-child {
-      border-radius: 0 0 10px 10px;
-    }
-    
-    /* ==================== MOBILE MENU ==================== */
-    .mix-header__mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--fg);
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 1001;
-    }
-    
-    .mix-header__mobile-toggle svg {
-      width: 24px;
-      height: 24px;
-      stroke: currentColor;
-    }
-    
-    .mix-header__mobile-menu {
-      position: fixed;
-      top: 0;
-      width: 85%;
-      max-width: 380px;
-      height: 100vh;
-      background: var(--bg);
-      z-index: 1000;
-      overflow-y: auto;
-      padding: 100px 0 2rem;
-      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    
-    .lang-fa .mix-header__mobile-menu {
-      right: 0;
-      transform: translateX(100%);
-    }
-    
-    .lang-fa .mix-header__mobile-menu.active {
-      transform: translateX(0);
-    }
-    
-    .lang-en .mix-header__mobile-menu {
-      left: 0;
-      transform: translateX(-100%);
-    }
-    
-    .lang-en .mix-header__mobile-menu.active {
-      transform: translateX(0);
-    }
-    
-    .mix-header__mobile-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .mix-header__mobile-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .mix-header__mobile-item {
-      display: block;
-      padding: 1rem 1.5rem;
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 1.125rem;
-      font-weight: 500;
-      border-bottom: 1px solid var(--stroke);
-      transition: color 0.2s ease;
-      cursor: pointer;
-      background: none;
-      border-left: none;
-      border-right: none;
-      border-top: none;
-      width: 100%;
-      text-align: inherit;
-      font-family: var(--font-fa);
-    }
-    
-    .lang-en .mix-header__mobile-item {
-      font-family: var(--font-en);
-    }
-    
-    .mix-header__mobile-item:hover {
-      color: var(--brand);
-    }
-    
-    .mix-header__mobile-submenu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      background: var(--card);
-    }
-    
-    .mix-header__mobile-submenu.active {
-      max-height: 500px;
-    }
-    
-    .mix-header__mobile-submenu a,
-    .mix-header__mobile-submenu button {
-      display: block;
-      padding: 0.75rem 1.5rem 0.75rem 2.5rem;
-      color: var(--fg);
-      opacity: 0.8;
-      text-decoration: none;
-      font-size: 1rem;
-      background: none;
-      border: none;
-      width: 100%;
-      text-align: inherit;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: var(--font-fa);
-    }
-    
-    .lang-en .mix-header__mobile-submenu a,
-    .lang-en .mix-header__mobile-submenu button {
-      font-family: var(--font-en);
-    }
-    
-    .mix-header__mobile-submenu a:hover,
-    .mix-header__mobile-submenu button:hover {
-      color: var(--brand);
-      opacity: 1;
-    }
-    
-    /* ==================== HERO ==================== */
-    .mix-hero {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .mix-hero__video-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    
-    .mix-hero__video,
-    .mix-hero__fallback-image {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-    }
-    
-    .mix-hero__overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
-    }
-    
-    .mix-hero__content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      color: white;
-      max-width: 800px;
-      padding: 2rem;
-    }
-    
-    .mix-hero__title {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      animation: fadeInUp 0.6s ease-out;
-    }
-    
-    .mix-hero__subtitle {
-      font-size: 1.5rem;
-      font-weight: 400;
-      opacity: 0.95;
-      animation: fadeInUp 0.6s ease-out 0.2s backwards;
-    }
-    
-    .mix-hero__scroll-arrow {
-      position: absolute;
-      bottom: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      cursor: pointer;
-      animation: bounceArrow 2s infinite;
-    }
-    
-    .mix-hero__scroll-arrow img {
-      width: 80px;
-      height: 80px;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)) brightness(0) invert(1);
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes bounceArrow {
-      0%, 100% {
-        transform: translateX(-50%) translateY(0);
-        opacity: 0.7;
-      }
-      50% {
-        transform: translateX(-50%) translateY(20px);
-        opacity: 1;
-      }
-    }
-    
-    /* ==================== SECTION ==================== */
-    .mix-section {
-      padding: 5rem 2rem;
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-    
-    .mix-section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    
-    .mix-section-title h2 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: var(--fg);
-    }
-    
-    .mix-section-title p {
-      font-size: 1.125rem;
-      color: var(--fg);
-      opacity: 0.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    /* ==================== GRID ==================== */
-    .mix-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    
-    @media (min-width: 768px) {
-      .mix-grid--4 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .mix-grid--4 {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-    
-    .mix-card {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      aspect-ratio: 3/4;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background: var(--card);
-    }
-    
-    .mix-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-    
-    .mix-card__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .mix-card__overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.5rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      color: white;
-    }
-    
-    .mix-card__title {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-    
-    /* ==================== FULLBLEED ==================== */
-    .mix-fullbleed {
-      position: relative;
-      height: 60vh;
-      min-height: 400px;
-      margin: 4rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    
-    .mix-fullbleed__image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .mix-fullbleed__overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
-    }
-    
-    .mix-fullbleed__content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      color: white;
-      max-width: 800px;
-      padding: 2rem;
-    }
-    
-    .mix-fullbleed__title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-    
-    .mix-fullbleed__text {
-      font-size: 1.25rem;
-      opacity: 0.95;
-    }
-    
-    /* ==================== VIDEO EMBED ==================== */
-    .mix-video-embed {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 16px;
-      background: var(--card);
-    }
-    
-    .mix-video-embed iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    
-    /* ==================== SOCIAL STRIP ==================== */
-    .mix-social-strip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      padding: 3rem 2rem;
-      background: var(--card);
-      margin: 4rem 0;
-    }
-    
-    .mix-social-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg);
-      border: 2px solid var(--stroke);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    
-    .mix-social-icon:hover {
-      border-color: var(--brand);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(15, 169, 156, 0.2);
-    }
-    
-    .mix-social-icon svg {
-      width: 24px;
-      height: 24px;
-      fill: var(--fg);
-      transition: fill 0.3s ease;
-    }
-    
-    .mix-social-icon:hover svg {
-      fill: var(--brand);
-    }
-    
-    /* آیکون‌های SVG با فایل - تغییر رنگ با تم */
-    .mix-social-icon img {
-      width: 24px;
-      height: 24px;
-      filter: brightness(0) saturate(100%);
-      transition: filter 0.3s ease;
-    }
-    
-    [data-theme="dark"] .mix-social-icon img {
-      filter: brightness(0) saturate(100%) invert(1);
-    }
-    
-    .mix-social-icon:hover img {
-      filter: brightness(0) saturate(100%) invert(56%) sepia(94%) saturate(422%) hue-rotate(130deg) brightness(92%) contrast(94%);
-    }
-    
-    /* ==================== BUTTONS ==================== */
-    .mix-btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-      font-size: 1rem;
-    }
-    
-    .mix-btn--primary {
-      background: var(--brand);
-      color: white;
-    }
-    
-    .mix-btn--primary:hover {
-      background: #0d8f84;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(15, 169, 156, 0.3);
-    }
-    
-    .mix-btn--outline {
-      background: transparent;
-      color: var(--fg);
-      border: 2px solid var(--stroke);
-    }
-    
-    .mix-btn--outline:hover {
-      border-color: var(--brand);
-      color: var(--brand);
-    }
-    
-    /* ==================== FOOTER ==================== */
-    .mix-footer {
-      background: var(--card);
-      border-top: 1px solid var(--stroke);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    
-    .mix-footer__logo {
-      height: 40px;
-      margin-bottom: 1.5rem;
-    }
-    
-    .mix-footer__text {
-      color: var(--fg);
-      opacity: 0.7;
-      margin-bottom: 1rem;
-    }
-    
-    .mix-footer__links {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .mix-footer__link {
-      color: var(--fg);
-      text-decoration: none;
-      opacity: 0.8;
-      transition: all 0.2s ease;
-    }
-    
-    .mix-footer__link:hover {
-      color: var(--brand);
-      opacity: 1;
-    }
-    
-    /* ==================== RESPONSIVE ==================== */
-    @media (max-width: 1200px) {
-      .mix-header__item {
-        font-size: 0.875rem;
-        padding: 0.4rem 0.6rem;
-      }
-      
-      .mix-header__logo {
-        padding: 0 1rem;
-      }
-    }
-    
-    @media (max-width: 968px) {
-      .mix-header__container {
-        padding: 0 1rem;
-        gap: 1rem;
-        height: 70px;
-      }
-      
-      .mix-header__nav {
-        display: none !important;
-      }
-      
-      .mix-header__mobile-toggle {
-        display: flex;
-      }
-      
-      .mix-header__logo {
-        padding: 0;
-      }
-      
-      .mix-header__logo img {
-        height: 36px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .mix-hero {
-        min-height: 500px;
-      }
-      
-      .mix-hero__title {
-        font-size: 2rem;
-      }
-      
-      .mix-hero__subtitle {
-        font-size: 1.125rem;
-      }
-      
-      .mix-section {
-        padding: 3rem 1rem;
-      }
-      
-      .mix-section-title h2 {
-        font-size: 1.75rem;
-      }
-      
-      .mix-grid {
-        gap: 1rem;
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .mix-fullbleed {
-        height: 40vh;
-        min-height: 300px;
-        margin: 2rem 0;
-      }
-      
-      .mix-fullbleed__title {
-        font-size: 1.75rem;
-      }
-      
-      .mix-social-strip {
-        gap: 1rem;
-        padding: 2rem 1rem;
-        flex-wrap: wrap;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .mix-hero__title {
-        font-size: 1.5rem;
-      }
-      
-      .mix-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .mix-btn {
-        width: 100%;
-      }
-    }
-  </style>
+/* ==================== CSS VARIABLES ==================== */
+:root {
+  --font-fa: 'Vazirmatn', sans-serif;
+  --font-en: 'Montserrat', sans-serif;
+  --brand: #0fa99c;
+  --bg: #ffffff;
+  --fg: #111111;
+  --card: #f9fafb;
+  --stroke: rgba(17, 17, 17, 0.16);
+}
+
+[data-theme="dark"] {
+  --bg: #0a0c10;
+  --fg: #f9fafb;
+  --card: #1a1d24;
+  --stroke: rgba(249, 250, 251, 0.16);
+}
+
+/* ==================== BASE ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-fa);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ==================== HEADER STYLES ==================== */
+.mix-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .mix-header {
+  background: rgba(10, 12, 16, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mix-header--scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--stroke);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .mix-header--scrolled {
+  background: rgba(10, 12, 16, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mix-header__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  gap: clamp(1rem, 3vw, 4.2rem);
+}
+
+.mix-header__logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  order: 2;
+}
+
+.mix-header__logo img {
+  height: 32px;
+  width: auto;
+}
+
+/* تم لایت → لوگوی dark */
+.logo-light {
+  display: none !important;
+}
+
+.logo-dark {
+  display: block !important;
+}
+
+/* تم دارک → لوگوی light */
+[data-theme="dark"] .logo-light {
+  display: block !important;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: none !important;
+}
+
+.mix-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.mix-header__nav--right {
+  justify-content: flex-end;
+  order: 1;
+}
+
+.mix-header__nav--left {
+  justify-content: flex-start;
+  order: 3;
+}
+
+.mix-header__item {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.mix-header__item:hover {
+  color: var(--brand);
+}
+
+.mix-header__divider {
+  width: 1px;
+  height: 20px;
+  background: var(--stroke);
+  margin: 0 0.25rem;
+}
+
+.mix-header__icon-btn {
+  background: none;
+  border: none;
+  color: var(--fg);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.mix-header__icon-btn:hover {
+  color: var(--brand);
+}
+
+/* Mega Menu */
+.mix-megamenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
+  min-width: 480px;
+  z-index: 100;
+}
+
+[data-theme="dark"] .mix-megamenu {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.mix-megamenu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mix-megamenu__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.mix-megamenu__col {
+  padding: 1.5rem;
+}
+
+.mix-megamenu__col:first-child {
+  border-left: 1px solid var(--stroke);
+}
+
+.mix-megamenu__root-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+  margin-bottom: 0.25rem;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.mix-megamenu__root-item:hover,
+.mix-megamenu__root-item.active {
+  color: var(--brand);
+  font-weight: 700;
+  background: rgba(15, 169, 156, 0.05);
+}
+
+.mix-megamenu__root-item.active::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+.mix-megamenu__sub-item {
+  padding: 0.6rem 1rem;
+  color: var(--fg);
+  text-decoration: none;
+  display: block;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.mix-megamenu__sub-item:hover {
+  color: var(--brand);
+  background: rgba(15, 169, 156, 0.05);
+}
+
+/* Dropdown */
+.mix-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
+  min-width: 180px;
+  z-index: 100;
+}
+
+[data-theme="dark"] .mix-dropdown {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.mix-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mix-dropdown a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--fg);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mix-dropdown a:hover {
+  color: var(--brand);
+  background: rgba(15, 169, 156, 0.05);
+}
+
+/* Mobile */
+.mix-header__mobile-toggle {
+  display: none;
+}
+
+.mix-header__mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 380px;
+  height: 100vh;
+  background: var(--bg);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 100px 0 2rem;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.mix-header__mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mix-header__mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mix-header__mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mix-header__mobile-item {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--stroke);
+  cursor: pointer;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 100%;
+  text-align: inherit;
+  font-family: var(--font-fa);
+}
+
+.mix-header__mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: var(--card);
+}
+
+.mix-header__mobile-submenu.active {
+  max-height: 500px;
+}
+
+.mix-header__mobile-submenu a {
+  display: block;
+  padding: 0.75rem 1.5rem 0.75rem 2.5rem;
+  color: var(--fg);
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* ==================== CATALOG PAGE - MINIMAL DESIGN ==================== */
+.catalog-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 8rem 3rem 4rem;
+}
+
+/* Header Row: Title + Search */
+.catalog-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+.catalog-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0;
+  font-family: var(--font-fa);
+}
+
+/* Search - Minimal Rounded */
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 0.9rem 3.5rem 0.9rem 1.75rem;
+  border: 1.5px solid var(--stroke);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-family: var(--font-fa);
+  background: var(--bg);
+  color: var(--fg);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .search-box {
+  background: var(--card);
+  border-color: var(--stroke);
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(15, 169, 156, 0.08);
+}
+
+.search-box::placeholder {
+  color: var(--fg);
+  opacity: 0.4;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  stroke: var(--fg);
+  opacity: 0.4;
+}
+
+/* Collections Navigation - Minimal */
+.collections-nav {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.collections-nav__wrapper {
+  position: relative;
+}
+
+.collections-nav__content {
+  padding-bottom: 1.25rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  scroll-behavior: smooth;
+}
+
+.collections-nav__content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.collections-list {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: max-content;
+  min-width: 100%;
+  padding: 0 60px;
+}
+
+/* Navigation Arrows */
+.collections-nav__arrow {
+  position: absolute;
+  top: 0;
+  bottom: 1.25rem;
+  width: 40px;
+  background: linear-gradient(to right, var(--bg), transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.collections-nav__arrow.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.collections-nav__arrow--left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg) 60%, transparent);
+}
+
+.collections-nav__arrow--right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg) 60%, transparent);
+}
+
+[data-theme="dark"] .collections-nav__arrow--left {
+  background: linear-gradient(to right, var(--bg) 60%, transparent);
+}
+
+[data-theme="dark"] .collections-nav__arrow--right {
+  background: linear-gradient(to left, var(--bg) 60%, transparent);
+}
+
+.collections-nav__arrow-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--brand);
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+}
+
+.collections-nav__arrow:hover .collections-nav__arrow-icon {
+  transform: scale(1.15);
+  color: #0d8f84;
+}
+
+.category-btn {
+  padding: 0.5rem 0.85rem;
+  border: none;
+  background: none;
+  color: var(--fg);
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-fa);
+  position: relative;
+  opacity: 0.55;
+  border-radius: 6px;
+}
+
+.category-btn:hover {
+  opacity: 0.9;
+  background: rgba(15, 169, 156, 0.05);
+}
+
+.category-btn.active {
+  font-weight: 600;
+  opacity: 1;
+  color: var(--brand);
+}
+
+/* Active Underline - Brand Color */
+.category-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 2.5px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+/* Minimal Divider Line */
+.collections-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--stroke);
+  opacity: 0.4;
+}
+
+/* Product Count - Subtle */
+.catalog-count {
+  font-size: 0.875rem;
+  opacity: 0.5;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  font-family: var(--font-fa);
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Product Card - Minimal with Border */
+.product-card {
+  position: relative;
+  background: var(--bg);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 1px solid var(--stroke);
+}
+
+[data-theme="dark"] .product-card {
+  background: var(--card);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: rgba(15, 169, 156, 0.3);
+}
+
+[data-theme="dark"] .product-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+[data-theme="dark"] .product-image-container {
+  background: #2a2d35;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.product-image--primary {
+  opacity: 1;
+  z-index: 1;
+}
+
+.product-image--hover {
+  opacity: 0;
+  z-index: 2;
+}
+
+.product-card:hover .product-image--primary {
+  opacity: 0;
+}
+
+.product-card:hover .product-image--hover {
+  opacity: 1;
+}
+
+.product-info {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.product-code {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 0.4rem;
+  font-family: var(--font-en);
+  letter-spacing: 0.3px;
+}
+
+.product-price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--brand);
+  font-family: var(--font-fa);
+}
+
+/* Loading & No Results */
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.1rem;
+  color: var(--fg);
+  opacity: 0.5;
+  grid-column: 1 / -1;
+}
+
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  grid-column: 1 / -1;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.no-results-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.no-results-text {
+  opacity: 0.6;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 968px) {
+  .catalog-container {
+    padding: 6rem 2rem 3rem;
+  }
+  
+  .catalog-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .search-container {
+    max-width: 100%;
+  }
+  
+  .collections-nav__content {
+    gap: 1.5rem;
+  }
+  
+  .collections-list {
+    gap: 0.15rem;
+  }
+  
+  .category-btn {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.7rem;
+  }
+  
+  .mix-header__nav {
+    display: none !important;
+  }
+  
+  .mix-header__mobile-toggle {
+    display: flex;
+  }
+  
+  .mix-header__logo {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-title {
+    font-size: 1.5rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .collections-label {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .collections-nav__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .collections-list {
+    width: 100%;
+  }
+}
+</style>
 </head>
 <body>
 
+  <!-- ========== شروع هدر ========== -->
   <div class="mix-header__mobile-overlay" id="mobile-overlay"></div>
 
   <header class="mix-header" id="header">
     <div class="mix-header__container">
+      <!-- Right Navigation (RTL: سمت راست) -->
       <nav class="mix-header__nav mix-header__nav--right">
+        <!-- Products Mega Menu -->
         <div style="position: relative;">
           <button class="mix-header__item" id="products-trigger">
             <span class="text-fa">محصولات</span>
@@ -1013,22 +837,22 @@
           <div class="mix-megamenu" id="products-mega">
             <div class="mix-megamenu__content">
               <div class="mix-megamenu__col">
-                <div class="mix-megamenu__root-item active" data-category="hob">
+                <a href="products-catalog.html?category=hob" class="mix-megamenu__root-item" data-category="hob">
                   <span class="text-fa">اجاق گاز</span>
                   <span class="text-en hidden">Hob</span>
-                </div>
-                <div class="mix-megamenu__root-item" data-category="sink">
+                </a>
+                <a href="products-catalog.html?category=sink" class="mix-megamenu__root-item" data-category="sink">
                   <span class="text-fa">سینک ظرف‌شویی</span>
                   <span class="text-en hidden">Sink</span>
-                </div>
-                <div class="mix-megamenu__root-item" data-category="oven">
+                </a>
+                <a href="products-catalog.html?category=oven" class="mix-megamenu__root-item" data-category="oven">
                   <span class="text-fa">فر توکار</span>
                   <span class="text-en hidden">Built-in Oven</span>
-                </div>
-                <div class="mix-megamenu__root-item" data-category="hood">
+                </a>
+                <a href="products-catalog.html?category=hood" class="mix-megamenu__root-item" data-category="hood">
                   <span class="text-fa">هود</span>
                   <span class="text-en hidden">Hood</span>
-                </div>
+                </a>
               </div>
               <div class="mix-megamenu__col" id="products-subs"></div>
             </div>
@@ -1077,11 +901,13 @@
         </a>
       </nav>
       
-      <a href="#" class="mix-header__logo">
+      <!-- Logo -->
+      <a href="index.html" class="mix-header__logo">
         <img src="logos/logo-light.svg" alt="MixPlus Logo" class="logo-light">
-        <img src="logos/logo-dark.svg" alt="MixPlus Logo" class="logo-dark hidden">
+        <img src="logos/logo-dark.svg" alt="MixPlus Logo" class="logo-dark">
       </a>
       
+      <!-- Mobile Menu Toggle -->
       <button class="mix-header__mobile-toggle" id="mobile-toggle">
         <svg viewBox="0 0 24 24" fill="none">
           <line x1="3" y1="12" x2="21" y2="12" stroke-width="2" stroke-linecap="round"/>
@@ -1090,6 +916,7 @@
         </svg>
       </button>
       
+      <!-- Left Navigation -->
       <nav class="mix-header__nav mix-header__nav--left">
         <button class="mix-header__icon-btn" id="search-btn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1103,11 +930,11 @@
         <div style="position: relative;">
           <button class="mix-header__item" id="social-trigger">#</button>
           <div class="mix-dropdown" id="social-dropdown">
-            <a href="https://www.linkedin.com/company/mixplus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://www.instagram.com/mixplus.co?igsh=MWh4YnRtZnc2YmM0eQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://www.youtube.com/@mixplusmovie" target="_blank" rel="noopener noreferrer">YouTube</a>
-            <a href="https://www.aparat.com/mixplus.co" target="_blank" rel="noopener noreferrer">Aparat</a>
-            <a href="https://t.me/mixplus_co_bot" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://www.linkedin.com/company/mixplus/" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/mixplus.co" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@mixplusmovie" target="_blank">YouTube</a>
+            <a href="https://www.aparat.com/mixplus.co" target="_blank">Aparat</a>
+            <a href="https://t.me/mixplus_co_bot" target="_blank">Telegram</a>
           </div>
         </div>
         
@@ -1118,7 +945,7 @@
         
         <div class="mix-header__divider"></div>
         
-        <a href="/catalog-fa.pdf" class="mix-header__item" target="_blank" id="catalog-link">
+        <a href="docs/catalog-fa.pdf" class="mix-header__item" target="_blank" id="catalog-link">
           <span class="text-fa">دانلود کاتالوگ</span>
           <span class="text-en hidden">Download Catalog</span>
         </a>
@@ -1163,530 +990,437 @@
     </div>
   </header>
 
+  <!-- Mobile Menu -->
   <div class="mix-header__mobile-menu" id="mobile-menu">
     <button class="mix-header__mobile-item" id="mobile-products-trigger">
       <span class="text-fa">محصولات ▼</span>
       <span class="text-en hidden">Products ▼</span>
     </button>
     <div class="mix-header__mobile-submenu" id="mobile-products">
-      <a href="#"><span class="text-fa">اجاق گاز</span><span class="text-en hidden">Hob</span></a>
-      <a href="#"><span class="text-fa">سینک ظرف‌شویی</span><span class="text-en hidden">Sink</span></a>
-      <a href="#"><span class="text-fa">فر توکار</span><span class="text-en hidden">Built-in Oven</span></a>
-      <a href="#"><span class="text-fa">هود</span><span class="text-en hidden">Hood</span></a>
+      <a href="products-catalog.html?category=hob"><span class="text-fa">اجاق گاز</span></a>
+      <a href="products-catalog.html?category=sink"><span class="text-fa">سینک ظرف‌شویی</span></a>
+      <a href="products-catalog.html?category=oven"><span class="text-fa">فر توکار</span></a>
+      <a href="products-catalog.html?category=hood"><span class="text-fa">هود</span></a>
     </div>
     
     <a href="#" class="mix-header__mobile-item">
       <span class="text-fa">نمایندگی‌های مجاز</span>
-      <span class="text-en hidden">Dealers</span>
     </a>
     
     <button class="mix-header__mobile-item" id="mobile-aftersales-trigger">
       <span class="text-fa">خدمات پس از فروش ▼</span>
-      <span class="text-en hidden">After-Sales ▼</span>
     </button>
     <div class="mix-header__mobile-submenu" id="mobile-aftersales">
-      <a href="#"><span class="text-fa">فرآیند رسیدگی به شکایات</span><span class="text-en hidden">Complaint Process</span></a>
-      <a href="#"><span class="text-fa">شرایط گارانتی محصولات</span><span class="text-en hidden">Warranty Terms</span></a>
-      <a href="#"><span class="text-fa">درخواست نصب محصول</span><span class="text-en hidden">Installation Request</span></a>
-      <a href="#"><span class="text-fa">ثبت شکایت</span><span class="text-en hidden">Complaint</span></a>
+      <a href="#"><span class="text-fa">فرآیند رسیدگی به شکایات</span></a>
+      <a href="#"><span class="text-fa">شرایط گارانتی محصولات</span></a>
+      <a href="#"><span class="text-fa">درخواست نصب محصول</span></a>
+      <a href="#"><span class="text-fa">ثبت شکایت</span></a>
     </div>
     
     <a href="#" class="mix-header__mobile-item">
       <span class="text-fa">درباره ما</span>
-      <span class="text-en hidden">About Us</span>
     </a>
     
     <button class="mix-header__mobile-item" id="mobile-social-trigger">
       <span class="text-fa">شبکه‌های اجتماعی ▼</span>
-      <span class="text-en hidden">Social Media ▼</span>
     </button>
     <div class="mix-header__mobile-submenu" id="mobile-social">
-      <a href="https://www.linkedin.com/company/mixplus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.instagram.com/mixplus.co?igsh=MWh4YnRtZnc2YmM0eQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://www.youtube.com/@mixplusmovie" target="_blank" rel="noopener noreferrer">YouTube</a>
-      <a href="https://www.aparat.com/mixplus.co" target="_blank" rel="noopener noreferrer">Aparat</a>
-      <a href="https://t.me/mixplus_co_bot" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="https://www.linkedin.com/company/mixplus/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/mixplus.co" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@mixplusmovie" target="_blank">YouTube</a>
+      <a href="https://www.aparat.com/mixplus.co" target="_blank">Aparat</a>
+      <a href="https://t.me/mixplus_co_bot" target="_blank">Telegram</a>
     </div>
     
-    <a href="/catalog-fa.pdf" class="mix-header__mobile-item" target="_blank" id="mobile-catalog-link">
+    <a href="docs/catalog-fa.pdf" class="mix-header__mobile-item" target="_blank">
       <span class="text-fa">دانلود کاتالوگ</span>
-      <span class="text-en hidden">Download Catalog</span>
     </a>
     
     <button class="mix-header__mobile-item" id="mobile-lang-switch">
       <span class="text-fa">🌐 Switch to English</span>
-      <span class="text-en hidden">🌐 تغییر به فارسی</span>
     </button>
     
     <button class="mix-header__mobile-item" id="mobile-theme-toggle">
       <span class="text-fa">🌓 تغییر تم</span>
-      <span class="text-en hidden">🌓 Toggle Theme</span>
     </button>
   </div>
+  <!-- ========== پایان هدر ========== -->
 
-  <section class="mix-hero">
-    <div class="mix-hero__video-container">
-      <video class="mix-hero__video" id="hero-video" autoplay muted playsinline>
-        <source src="videos/hero-01.mp4" type="video/mp4">
-      </video>
-      <img src="images/hero-fallback.jpg" 
-           alt="Hero" 
-           class="mix-hero__fallback-image hidden" 
-           id="hero-fallback">
+  <!-- Catalog Container -->
+  <div class="catalog-container">
+  
+  <!-- Header Row: Title + Search -->
+  <div class="catalog-header-row">
+    <h1 class="catalog-title" id="page-title">اجاق گاز</h1>
+    
+    <div class="search-container">
+      <input 
+        type="text" 
+        class="search-box" 
+        id="search-input"
+        placeholder="جستجو..."
+        autocomplete="off"
+      >
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
     </div>
-    <div class="mix-hero__overlay"></div>
-    <div class="mix-hero__content">
-      <h1 class="mix-hero__title" id="hero-title">کیفیت برتر با طراحی ایتالیایی</h1>
-      <p class="mix-hero__subtitle" id="hero-subtitle">محصولات آشپزخانه که زندگی شما را متحول می‌کنند</p>
-    </div>
-    <div class="mix-hero__scroll-arrow" id="scroll-arrow">
-      <img src="icons/scroll-arrow.svg" alt="Scroll down">
-    </div>
-  </section>
-
-  <section class="mix-section">
-    <div class="mix-section-title">
-      <h2>
-        <span class="text-fa">میکس‌پلاس؛ کیفیت و زیبایی در آشپزخانه شما</span>
-        <span class="text-en hidden">MixPlus: Quality and Beauty in Your Kitchen</span>
-      </h2>
-      <p>
-        <span class="text-fa">ما با الهام از طراحی ایتالیایی و استفاده از بهترین مواد اولیه، محصولاتی تولید می‌کنیم که علاوه بر زیبایی، دوام و کارایی بالایی دارند.</span>
-        <span class="text-en hidden">Inspired by Italian design and using the finest raw materials, we manufacture products that combine beauty with durability and high performance.</span>
-      </p>
-    </div>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-      <a href="#categories" class="mix-btn mix-btn--primary">
-        <span class="text-fa">مشاهده محصولات</span>
-        <span class="text-en hidden">View Products</span>
-      </a>
-      <a href="#" class="mix-btn mix-btn--outline">
-        <span class="text-fa">درباره میکس‌پلاس</span>
-        <span class="text-en hidden">About MixPlus</span>
-      </a>
-      <a href="/catalog-fa.pdf" class="mix-btn mix-btn--outline" target="_blank" id="catalog-btn">
-        <span class="text-fa">دانلود کاتالوگ</span>
-        <span class="text-en hidden">Download Catalog</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="mix-section" id="categories">
-    <div class="mix-section-title">
-      <h2>
-        <span class="text-fa">گروه‌های محصولات</span>
-        <span class="text-en hidden">Product Categories</span>
-      </h2>
-    </div>
-    <div class="mix-grid mix-grid--4">
-      <a href="products-catalog.html?category=hob" class="mix-card">
-        <img src="images/categories/hob.jpg" alt="Hob" class="mix-card__image">
-        <div class="mix-card__overlay">
-          <h3 class="mix-card__title">
-            <span class="text-fa">اجاق گاز</span>
-            <span class="text-en hidden">Hob</span>
-          </h3>
+  </div>
+  
+  <!-- Collections Navigation -->
+  <div class="collections-nav">
+    <div class="collections-nav__wrapper">
+      <!-- Right Arrow (RTL: اسکرول به راست) -->
+      <div class="collections-nav__arrow collections-nav__arrow--right" id="nav-arrow-right">
+        <svg class="collections-nav__arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </div>
+      
+      <!-- Left Arrow (RTL: اسکرول به چپ) -->
+      <div class="collections-nav__arrow collections-nav__arrow--left" id="nav-arrow-left">
+        <svg class="collections-nav__arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </div>
+      
+      <div class="collections-nav__content" id="nav-content">
+        <div class="collections-list" id="category-switcher">
+          <!-- Will be populated by JavaScript -->
         </div>
-      </a>
-      <a href="products-catalog.html?category=sink" class="mix-card">
-        <img src="images/categories/sink.jpg" alt="Sink" class="mix-card__image">
-        <div class="mix-card__overlay">
-          <h3 class="mix-card__title">
-            <span class="text-fa">سینک ظرف‌شویی</span>
-            <span class="text-en hidden">Sink</span>
-          </h3>
-        </div>
-      </a>
-      <a href="products-catalog.html?category=oven" class="mix-card">
-        <img src="images/categories/oven.jpg" alt="Oven" class="mix-card__image">
-        <div class="mix-card__overlay">
-          <h3 class="mix-card__title">
-            <span class="text-fa">فر توکار</span>
-            <span class="text-en hidden">Built-in Oven</span>
-          </h3>
-        </div>
-      </a>
-      <a href="products-catalog.html?category=hood" class="mix-card">
-        <img src="images/categories/hood.jpg" alt="Hood" class="mix-card__image">
-        <div class="mix-card__overlay">
-          <h3 class="mix-card__title">
-            <span class="text-fa">هود</span>
-            <span class="text-en hidden">Hood</span>
-          </h3>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="mix-fullbleed">
-    <img src="images/banners/fullbleed-01.jpg" alt="Banner" class="mix-fullbleed__image">
-    <div class="mix-fullbleed__overlay"></div>
-    <div class="mix-fullbleed__content">
-      <h2 class="mix-fullbleed__title">
-        <span class="text-fa">طراحی الهام‌گرفته از ایتالیا</span>
-        <span class="text-en hidden">Italian-Inspired Design</span>
-      </h2>
-      <p class="mix-fullbleed__text">
-        <span class="text-fa">زیبایی، کیفیت و نوآوری در هر جزئیات</span>
-        <span class="text-en hidden">Beauty, quality and innovation in every detail</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="mix-section">
-    <div class="mix-section-title">
-      <h2>
-        <span class="text-fa">بازدید از کارخانه میکس‌پلاس</span>
-        <span class="text-en hidden">Visit MixPlus Factory</span>
-      </h2>
-    </div>
-    <div style="max-width: 900px; margin: 0 auto;">
-      <div class="mix-video-embed">
-        <iframe id="factory-video" src="https://www.aparat.com/video/video/embed/videohash/sample/vt/frame" allowfullscreen></iframe>
       </div>
     </div>
-  </section>
+    <div class="collections-divider"></div>
+  </div>
+  
+  <!-- Product Count -->
+  <p class="catalog-count" id="product-count">در حال بارگذاری...</p>
+  
+  <!-- Products Grid -->
+  <div class="products-grid" id="products-grid">
+    <div class="loading">در حال بارگذاری محصولات...</div>
+  </div>
+  
+</div>
 
-  <section class="mix-fullbleed">
-    <img src="images/banners/fullbleed-02.jpg" alt="Banner 2" class="mix-fullbleed__image">
-    <div class="mix-fullbleed__overlay"></div>
-    <div class="mix-fullbleed__content">
-      <h2 class="mix-fullbleed__title">
-        <span class="text-fa">کیفیت بی‌نظیر، قیمت منصفانه</span>
-        <span class="text-en hidden">Unmatched Quality, Fair Price</span>
-      </h2>
-      <p class="mix-fullbleed__text">
-        <span class="text-fa">محصولات میکس‌پلاس، انتخابی هوشمندانه برای آشپزخانه شما</span>
-        <span class="text-en hidden">MixPlus products, a smart choice for your kitchen</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="mix-section">
-    <div class="mix-grid mix-grid--4">
-      <a href="#" class="mix-card" style="aspect-ratio: 1/1;">
-        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=400&fit=crop" alt="Products" class="mix-card__image">
-        <div class="mix-card__overlay">
-          <h3 class="mix-card__title">
-            <span class="text-fa">محصولات</span>
-            <span class="text-en hidden">Products</span>
-          </h3>
-        </div>
-      </a>
-      <a href="#" class="mix-card" style="aspect-ratio: 1/1;">
-        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=400&fit=crop" alt="Events" class="mix-card__image">
-        <div class="mix-card__overlay">
-          <h3 class="mix-card__title">
-            <span class="text-fa">رویدادها</span>
-            <span class="text-en hidden">Events</span>
-          </h3>
-        </div>
-      </a>
-      <a href="#" class="mix-card" style="aspect-ratio: 1/1;">
-        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=400&h=400&fit=crop" alt="Services" class="mix-card__image">
-        <div class="mix-card__overlay">
-          <h3 class="mix-card__title">
-            <span class="text-fa">خدمات</span>
-            <span class="text-en hidden">Services</span>
-          </h3>
-        </div>
-      </a>
-      <a href="#" class="mix-card" style="aspect-ratio: 1/1;">
-        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=400&h=400&fit=crop" alt="Training" class="mix-card__image">
-        <div class="mix-card__overlay">
-          <h3 class="mix-card__title">
-            <span class="text-fa">آموزش</span>
-            <span class="text-en hidden">Training</span>
-          </h3>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="mix-fullbleed">
-    <img src="images/banners/fullbleed-03.jpg" alt="Banner 3" class="mix-fullbleed__image">
-    <div class="mix-fullbleed__overlay"></div>
-    <div class="mix-fullbleed__content">
-      <h2 class="mix-fullbleed__title">
-        <span class="text-fa">در کنار شما در هر لحظه</span>
-        <span class="text-en hidden">With You Every Moment</span>
-      </h2>
-      <p class="mix-fullbleed__text">
-        <span class="text-fa">میکس‌پلاس، نامی مطمئن در صنعت لوازم خانگی</span>
-        <span class="text-en hidden">MixPlus, a trusted name in the home appliances industry</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="mix-social-strip">
-    <a href="https://www.linkedin.com/company/mixplus/" target="_blank" rel="noopener noreferrer" class="mix-social-icon">
-      <img src="social/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px; fill: currentColor;">
-    </a>
-    <a href="https://www.instagram.com/mixplus.co?igsh=MWh4YnRtZnc2YmM0eQ==" target="_blank" rel="noopener noreferrer" class="mix-social-icon">
-      <img src="social/instagram.svg" alt="Instagram" style="width: 24px; height: 24px; fill: currentColor;">
-    </a>
-    <a href="https://www.youtube.com/@mixplusmovie" target="_blank" rel="noopener noreferrer" class="mix-social-icon">
-      <img src="social/youtube.svg" alt="YouTube" style="width: 24px; height: 24px; fill: currentColor;">
-    </a>
-    <a href="https://www.aparat.com/mixplus.co" target="_blank" rel="noopener noreferrer" class="mix-social-icon">
-      <img src="social/aparat.svg" alt="Aparat" style="width: 24px; height: 24px; fill: currentColor;">
-    </a>
-    <a href="https://t.me/mixplus_co_bot" target="_blank" rel="noopener noreferrer" class="mix-social-icon">
-      <img src="social/telegram.svg" alt="Telegram" style="width: 24px; height: 24px; fill: currentColor;">
-    </a>
-  </section>
-
-  <footer class="mix-footer">
-    <svg width="100" height="35" viewBox="0 0 120 40" class="mix-footer__logo" style="margin: 0 auto 1.5rem;">
-      <text x="60" y="25" font-family="Arial" font-size="20" font-weight="bold" fill="var(--brand)" text-anchor="middle">MixPlus</text>
-    </svg>
-    <p class="mix-footer__text">
-      <span class="text-fa">© ۱۴۰۳ میکس‌پلاس. تمامی حقوق محفوظ است.</span>
-      <span class="text-en hidden">© 2024 MixPlus. All rights reserved.</span>
-    </p>
-    <div class="mix-footer__links">
-      <a href="#" class="mix-footer__link">
-        <span class="text-fa">تماس با ما</span>
-        <span class="text-en hidden">Contact</span>
-      </a>
-      <a href="#" class="mix-footer__link">
-        <span class="text-fa">حریم خصوصی</span>
-        <span class="text-en hidden">Privacy</span>
-      </a>
-    </div>
-  </footer>
-
+  <!-- JavaScript -->
   <script>
-    const categories = {
-      hob: { fa: [{ name: 'اجاق استیل' }, { name: 'اجاق شیشه‌ای' }, { name: 'اجاق لعابی' }, { name: 'اجاق برقی' }], en: [{ name: 'Steel Hob' }, { name: 'Glass Hob' }, { name: 'Enamel Hob' }, { name: 'Electric Hob' }] },
-      sink: { fa: [{ name: 'سینک دست‌ساز' }, { name: 'استیل روکار' }, { name: 'استیل توکار' }, { name: 'نیمه فانتزی' }, { name: 'گرانیتی' }], en: [{ name: 'Handmade' }, { name: 'Topmount' }, { name: 'Undermount' }, { name: 'Semi-fancy' }, { name: 'Granite' }] },
-      oven: { fa: [{ name: 'مشاهده همه' }], en: [{ name: 'View All' }] },
-      hood: { fa: [{ name: 'هود توکار' }, { name: 'هود دیواری' }], en: [{ name: 'Built-in' }, { name: 'Wall' }] }
-    };
-
-    const heroMessages = {
-      fa: [
-        { title: 'کیفیت برتر با طراحی ایتالیایی', subtitle: 'محصولات آشپزخانه که زندگی شما را متحول می‌کنند' },
-        { title: 'نوآوری در هر جزئیات', subtitle: 'تکنولوژی پیشرفته در خدمت راحتی شما' },
-        { title: 'زیبایی که ماندگار است', subtitle: 'طراحی‌هایی که هرگز از مد نمی‌افتند' }
-      ],
-      en: [
-        { title: 'Premium Quality with Italian Design', subtitle: 'Kitchen products that transform your life' },
-        { title: 'Innovation in Every Detail', subtitle: 'Advanced technology at your service' },
-        { title: 'Beauty That Lasts', subtitle: 'Designs that never go out of style' }
-      ]
-    };
-
-    let currentLang = localStorage.getItem('mix_lang') || 'fa';
-    let messageQueue = [];
-
-    function switchLanguage() {
-      currentLang = currentLang === 'fa' ? 'en' : 'fa';
-      localStorage.setItem('mix_lang', currentLang);
-      applyLanguage();
-      document.getElementById('mobile-menu').classList.remove('active');
-      document.getElementById('mobile-overlay').classList.remove('active');
-    }
-
-    function applyLanguage() {
-      const html = document.documentElement;
-      html.setAttribute('lang', currentLang);
-      html.setAttribute('dir', currentLang === 'fa' ? 'rtl' : 'ltr');
-      html.classList.remove('lang-fa', 'lang-en');
-      html.classList.add(`lang-${currentLang}`);
-      
-      document.querySelectorAll('.text-fa').forEach(el => el.classList.toggle('hidden', currentLang !== 'fa'));
-      document.querySelectorAll('.text-en').forEach(el => el.classList.toggle('hidden', currentLang !== 'en'));
-      document.querySelectorAll('.show-fa').forEach(el => el.classList.toggle('hidden', currentLang !== 'fa'));
-      document.querySelectorAll('.show-en').forEach(el => el.classList.toggle('hidden', currentLang !== 'en'));
-      
-      document.getElementById('catalog-link').href = `docs/catalog-${currentLang}.pdf`;
-      document.getElementById('mobile-catalog-link').href = `docs/catalog-${currentLang}.pdf`;
-      document.getElementById('catalog-btn').href = `docs/catalog-${currentLang}.pdf`;
-      document.getElementById('factory-video').src = currentLang === 'fa' ? 'https://www.aparat.com/video/video/embed/videohash/rqy7870/vt/frame' : 'https://www.youtube.com/embed/eaICa0IHvu0';
-      
-      updateProductsSubmenu();
-      clearInterval(window.heroMessageInterval);
-      startHeroMessages();
-    }
-
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      document.getElementById('theme-icon-sun').classList.toggle('hidden', theme === 'dark');
-      document.getElementById('theme-icon-moon').classList.toggle('hidden', theme === 'light');
-      // تغییر لوگو بر اساس تم - در light باید dark لوگو باشه
-      document.querySelector('.logo-light').classList.toggle('hidden', theme === 'light');
-      document.querySelector('.logo-dark').classList.toggle('hidden', theme === 'dark');
-    }
-
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme');
-      const newTheme = current === 'light' ? 'dark' : 'light';
-      setTheme(newTheme);
-      localStorage.setItem('mix_theme', newTheme);
-    }
-
-    function updateProductsSubmenu(category = 'hob') {
-  const subs = categories[category][currentLang];
-  const container = document.getElementById('products-subs');
-  container.innerHTML = '';
-  subs.forEach(sub => {
-    const link = document.createElement('a');
-    link.href = `products-catalog.html?category=${category}&sub=${sub.slug}`; // ✅ درست!
-    link.className = 'mix-megamenu__sub-item';
-    link.textContent = sub.name;
-    container.appendChild(link);
-  });
-    }
-
-    function startHeroMessages() {
-      function showNext() {
-        if (messageQueue.length === 0) {
-          messageQueue = [...Array(heroMessages[currentLang].length).keys()].sort(() => Math.random() - 0.5);
-        }
-        
-        const titleEl = document.getElementById('hero-title');
-        const subtitleEl = document.getElementById('hero-subtitle');
-        
-        // Fade out با انیمیشن
-        titleEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        subtitleEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        titleEl.style.opacity = '0';
-        titleEl.style.transform = 'translateY(-20px)';
-        subtitleEl.style.opacity = '0';
-        subtitleEl.style.transform = 'translateY(-20px)';
-        
-        setTimeout(() => {
-          const msg = heroMessages[currentLang][messageQueue.shift()];
-          titleEl.textContent = msg.title;
-          subtitleEl.textContent = msg.subtitle;
-          
-          // Fade in با انیمیشن
-          setTimeout(() => {
-            titleEl.style.opacity = '1';
-            titleEl.style.transform = 'translateY(0)';
-            setTimeout(() => {
-              subtitleEl.style.opacity = '1';
-              subtitleEl.style.transform = 'translateY(0)';
-            }, 200);
-          }, 50);
-        }, 650);
-      }
-      window.heroMessageInterval = setInterval(showNext, 5000);
-    }
-
-    // Event Listeners
-    document.getElementById('switch-lang').addEventListener('click', e => { e.preventDefault(); switchLanguage(); });
-    document.getElementById('mobile-lang-switch').addEventListener('click', switchLanguage);
-    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-    document.getElementById('mobile-theme-toggle').addEventListener('click', toggleTheme);
-
-    document.getElementById('mobile-toggle').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('active');
-      document.getElementById('mobile-overlay').classList.toggle('active');
-    });
-
-    document.getElementById('mobile-overlay').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.remove('active');
-      document.getElementById('mobile-overlay').classList.remove('active');
-    });
-
-    ['mobile-products-trigger', 'mobile-aftersales-trigger', 'mobile-social-trigger'].forEach(id => {
-      document.getElementById(id).addEventListener('click', function() {
-        const submenu = id.replace('-trigger', '');
-        document.getElementById(submenu).classList.toggle('active');
-      });
-    });
-
-    // Mega Menu Hover
-    function setupMegaMenu(triggerId, megaId) {
-      const trigger = document.getElementById(triggerId);
-      const mega = document.getElementById(megaId);
-      let timeout;
-      
-      trigger.addEventListener('mouseenter', () => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => mega.classList.add('active'), 250);
-      });
-      
-      trigger.addEventListener('mouseleave', () => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => { if (!mega.matches(':hover')) mega.classList.remove('active'); }, 250);
-      });
-      
-      mega.addEventListener('mouseenter', () => { clearTimeout(timeout); mega.classList.add('active'); });
-      mega.addEventListener('mouseleave', () => { timeout = setTimeout(() => mega.classList.remove('active'), 250); });
-    }
-
-    setupMegaMenu('products-trigger', 'products-mega');
-    setupMegaMenu('aftersales-trigger', 'aftersales-mega');
-    setupMegaMenu('social-trigger', 'social-dropdown');
-
-    // برای نمایش زیرمنوها با Hover
-document.querySelectorAll('.mix-megamenu__root-item').forEach(item => {
-  item.addEventListener('mouseenter', function() {
-    document.querySelectorAll('.mix-megamenu__root-item').forEach(i => i.classList.remove('active'));
-    this.classList.add('active');
-    updateProductsSubmenu(this.getAttribute('data-category'));
-  });
-});
-
-// برای کلیک روی Root Item (رفتن به صفحه کاتالوگ)
-document.querySelectorAll('.mix-megamenu__root-item').forEach(item => {
-  item.addEventListener('click', function() {
-    const category = this.getAttribute('data-category');
-    window.location.href = `products-catalog.html?category=${category}`;
-  });
-});
-
-    // Lang dropdown (click)
-    document.getElementById('lang-trigger').addEventListener('click', e => {
-      e.stopPropagation();
-      document.getElementById('lang-dropdown').classList.toggle('active');
-    });
-
-    document.addEventListener('click', () => document.getElementById('lang-dropdown').classList.remove('active'));
-
-    // Scroll arrow
-    document.getElementById('scroll-arrow').addEventListener('click', () => {
-      document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Header scroll - فقط بعد از عبور از هیرو
-    window.addEventListener('scroll', () => {
-      const heroHeight = document.querySelector('.mix-hero').offsetHeight;
-      const scrolled = window.scrollY > (heroHeight - 100); // 100px قبل از انتهای هیرو
-      document.getElementById('header').classList.toggle('mix-header--scrolled', scrolled);
-    });
-
-    // Hero Video Rotation (1→2→3→4→1...)
-    const heroVideo = document.getElementById('hero-video');
-    const heroFallback = document.getElementById('hero-fallback');
-    const videos = ['videos/hero-01.mp4', 'videos/hero-02.mp4', 'videos/hero-03.mp4', 'videos/hero-04.mp4'];
-    let currentVideoIndex = 0;
-
-    function playNextVideo() {
-      currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-      heroVideo.src = videos[currentVideoIndex];
-      heroVideo.load();
-      heroVideo.play().catch(() => {
-        heroVideo.classList.add('hidden');
-        heroFallback.classList.remove('hidden');
-      });
-    }
-
-    heroVideo.addEventListener('ended', playNextVideo);
+    // Load products from JSON
+    let allProducts = [];
+    let categories = [];
     
-    heroVideo.play().catch(() => {
-      heroVideo.classList.add('hidden');
-      heroFallback.classList.remove('hidden');
-    });
+    // Get category and subcategory from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentCategory = urlParams.get('category') || 'hob';
+    let currentSubcategory = urlParams.get('sub') || 'all';
 
-    // Init
-    setTheme(localStorage.getItem('mix_theme') || 'light');
-    applyLanguage();
-    startHeroMessages();
+    // تابع به‌روزرسانی عنوان صفحه
+function updatePageTitle() {
+  const categoryMap = {
+    'hob': { fa: 'اجاق گاز', en: 'Hob' },
+    'sink': { fa: 'سینک ظرفشویی', en: 'Sink' },
+    'oven': { fa: 'فر توکار', en: 'Built-in Oven' },
+    'hood': { fa: 'هود', en: 'Hood' }
+  };
+  
+  const titleEl = document.getElementById('page-title');
+  const lang = document.documentElement.getAttribute('lang') || 'fa';
+  
+  if (categoryMap[currentCategory]) {
+    titleEl.textContent = categoryMap[currentCategory][lang];
+  }
+}
+
+// و بعد از fetch کردن data، این را صدا بزنید:
+updatePageTitle();
+    
+    // Fetch products data
+    fetch('products.json')
+      .then(response => response.json())
+      .then(data => {
+        allProducts = data.products;
+        categories = data.categories;
+        
+        // Render category switcher
+        renderCategorySwitcher();
+        
+        // Render products
+        renderProducts();
+        updatePageTitle();
+      })
+      .catch(error => {
+        console.error('Error loading products:', error);
+        document.getElementById('products-grid').innerHTML = `
+          <div class="no-results">
+            <div class="no-results-icon">⚠️</div>
+            <h3 class="no-results-title">خطا در بارگذاری محصولات</h3>
+            <p class="no-results-text">لطفاً صفحه را رفرش کنید</p>
+          </div>
+        `;
+      });
+    
+    // Render category switcher
+    function renderCategorySwitcher() {
+      const currentCat = categories.find(cat => cat.id === currentCategory);
+      if (!currentCat || !currentCat.subcategories) return;
+      
+      const switcher = document.getElementById('category-switcher');
+      switcher.innerHTML = currentCat.subcategories.map(sub => `
+        <button 
+          class="category-btn ${sub.id === currentSubcategory ? 'active' : ''}"
+          data-subcategory="${sub.id}"
+        >
+          ${sub.nameFa}
+        </button>
+      `).join('');
+      
+      // Add click handlers
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentSubcategory = btn.dataset.subcategory;
+          renderCategorySwitcher();
+          renderProducts();
+        });
+      });
+    }
+    
+    // Render products
+    function renderProducts(searchQuery = '') {
+      // Filter by category
+      let filtered = allProducts.filter(p => p.category === currentCategory);
+      
+      // Filter by subcategory (if not "all")
+      if (currentSubcategory && currentSubcategory !== 'all') {
+        filtered = filtered.filter(p => p.subcategory === currentSubcategory);
+      }
+      
+      // Apply search filter
+      if (searchQuery.trim()) {
+        filtered = filtered.filter(p => 
+          p.productId.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      }
+      
+      const grid = document.getElementById('products-grid');
+      const count = document.getElementById('product-count');
+      
+      // Update count
+      count.textContent = `${filtered.length} محصول`;
+      
+      // Render grid
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="no-results">
+            <div class="no-results-icon">🔍</div>
+            <h3 class="no-results-title">محصولی یافت نشد</h3>
+            <p class="no-results-text">لطفاً عبارت جستجوی دیگری امتحان کنید</p>
+          </div>
+        `;
+        return;
+      }
+      
+      grid.innerHTML = filtered.map(product => `
+        <div class="product-card" data-product-id="${product.id}">
+          <div class="product-image-container">
+            <img 
+              src="${product.image1}" 
+              alt="${product.productId}"
+              class="product-image product-image--primary"
+              loading="lazy"
+            >
+            <img 
+              src="${product.image2}" 
+              alt="${product.productId}"
+              class="product-image product-image--hover"
+              loading="lazy"
+            >
+          </div>
+          <div class="product-info">
+            <div class="product-code">${product.productId}</div>
+            <div class="product-price">${product.price} ریال</div>
+          </div>
+        </div>
+      `).join('');
+      
+      // Add click handlers for products
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const productId = card.dataset.productId;
+          // Navigate to product detail page
+          window.location.href = `product-detail.html?id=${productId}`;
+        });
+      });
+    }
+    
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    let searchTimeout;
+    
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        renderProducts(e.target.value);
+      }, 300);
+    });
+    // Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('mix_theme', theme);
+}
+
+const savedTheme = localStorage.getItem('mix_theme') || 'light';
+setTheme(savedTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    setTheme(current === 'light' ? 'dark' : 'light');
+  });
+}
+
+// Header Scroll
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (window.scrollY > 10) {
+    header.classList.add('mix-header--scrolled');
+  } else {
+    header.classList.remove('mix-header--scrolled');
+  }
+});
+
+// Mobile Menu
+const mobileToggle = document.getElementById('mobile-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileOverlay = document.getElementById('mobile-overlay');
+
+if (mobileToggle) {
+  mobileToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+  });
+}
+
+if (mobileOverlay) {
+  mobileOverlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    mobileOverlay.classList.remove('active');
+  });
+}
+
+// Mega Menu Hover
+function setupMegaMenu(triggerId, megaId) {
+  const trigger = document.getElementById(triggerId);
+  const mega = document.getElementById(megaId);
+  if (!trigger || !mega) return;
+  
+  let timeout;
+  
+  trigger.addEventListener('mouseenter', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => mega.classList.add('active'), 250);
+  });
+  
+  trigger.addEventListener('mouseleave', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => { if (!mega.matches(':hover')) mega.classList.remove('active'); }, 250);
+  });
+  
+  mega.addEventListener('mouseenter', () => { clearTimeout(timeout); mega.classList.add('active'); });
+  mega.addEventListener('mouseleave', () => { timeout = setTimeout(() => mega.classList.remove('active'), 250); });
+}
+
+setupMegaMenu('products-trigger', 'products-mega');
+setupMegaMenu('aftersales-trigger', 'aftersales-mega');
+setupMegaMenu('social-trigger', 'social-dropdown');
+
+// Mobile submenu toggles
+const mobileProductsTrigger = document.getElementById('mobile-products-trigger');
+const mobileProducts = document.getElementById('mobile-products');
+
+if (mobileProductsTrigger) {
+  mobileProductsTrigger.addEventListener('click', () => {
+    mobileProducts.classList.toggle('active');
+  });
+}
+
+const mobileAftersalesTrigger = document.getElementById('mobile-aftersales-trigger');
+const mobileAftersales = document.getElementById('mobile-aftersales');
+
+if (mobileAftersalesTrigger) {
+  mobileAftersalesTrigger.addEventListener('click', () => {
+    mobileAftersales.classList.toggle('active');
+  });
+}
+
+const mobileSocialTrigger = document.getElementById('mobile-social-trigger');
+const mobileSocial = document.getElementById('mobile-social');
+
+if (mobileSocialTrigger) {
+  mobileSocialTrigger.addEventListener('click', () => {
+    mobileSocial.classList.toggle('active');
+  });
+}
+
+// ==================== NAVIGATION ARROWS ====================
+const navContent = document.getElementById('nav-content');
+const arrowLeft = document.getElementById('nav-arrow-left');
+const arrowRight = document.getElementById('nav-arrow-right');
+
+// تابع بررسی overflow و نمایش فلش‌ها
+function checkScrollButtons() {
+  if (!navContent) return;
+  
+  const hasOverflow = navContent.scrollWidth > navContent.clientWidth;
+  const scrollLeft = navContent.scrollLeft;
+  const maxScroll = navContent.scrollWidth - navContent.clientWidth;
+  
+  // نمایش یا مخفی کردن فلش چپ (سمت چپ در RTL)
+  if (hasOverflow && scrollLeft < maxScroll - 5) {
+    arrowLeft.classList.add('visible');
+  } else {
+    arrowLeft.classList.remove('visible');
+  }
+  
+  // نمایش یا مخفی کردن فلش راست (سمت راست در RTL)
+  if (hasOverflow && scrollLeft > 5) {
+    arrowRight.classList.add('visible');
+  } else {
+    arrowRight.classList.remove('visible');
+  }
+}
+
+// کلیک روی فلش راست (اسکرول به چپ - در RTL به سمت انتهای لیست)
+if (arrowRight) {
+  arrowRight.addEventListener('click', () => {
+    navContent.scrollBy({ left: -200, behavior: 'smooth' });
+    setTimeout(checkScrollButtons, 350);
+  });
+}
+
+// کلیک روی فلش چپ (اسکرول به راست - در RTL به سمت ابتدای لیست)
+if (arrowLeft) {
+  arrowLeft.addEventListener('click', () => {
+    navContent.scrollBy({ left: 200, behavior: 'smooth' });
+    setTimeout(checkScrollButtons, 350);
+  });
+}
+
+// بررسی اولیه
+setTimeout(checkScrollButtons, 100);
+
+// بررسی با اسکرول
+if (navContent) {
+  navContent.addEventListener('scroll', checkScrollButtons);
+}
+
+// بررسی با resize
+window.addEventListener('resize', checkScrollButtons);
   </script>
+  
 
 </body>
 </html>
