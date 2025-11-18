@@ -1070,17 +1070,17 @@ body {
   <!-- Collections Navigation -->
   <div class="collections-nav">
     <div class="collections-nav__wrapper">
-      <!-- Left Arrow (RTL: راست) -->
+      <!-- Right Arrow (RTL: اسکرول به راست) -->
       <div class="collections-nav__arrow collections-nav__arrow--right" id="nav-arrow-right">
         <svg class="collections-nav__arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="15 18 9 12 15 6"></polyline>
+          <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
       </div>
       
-      <!-- Right Arrow (RTL: چپ) -->
+      <!-- Left Arrow (RTL: اسکرول به چپ) -->
       <div class="collections-nav__arrow collections-nav__arrow--left" id="nav-arrow-left">
         <svg class="collections-nav__arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="9 18 15 12 9 6"></polyline>
+          <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </div>
       
@@ -1392,18 +1392,18 @@ function checkScrollButtons() {
   }
 }
 
-// کلیک روی فلش چپ (اسکرول به چپ)
-if (arrowLeft) {
-  arrowLeft.addEventListener('click', () => {
-    navContent.scrollBy({ left: 200, behavior: 'smooth' });
+// کلیک روی فلش راست (اسکرول به راست - در RTL به سمت ابتدای لیست)
+if (arrowRight) {
+  arrowRight.addEventListener('click', () => {
+    navContent.scrollBy({ left: -200, behavior: 'smooth' });
     setTimeout(checkScrollButtons, 350);
   });
 }
 
-// کلیک روی فلش راست (اسکرول به راست)
-if (arrowRight) {
-  arrowRight.addEventListener('click', () => {
-    navContent.scrollBy({ left: -200, behavior: 'smooth' });
+// کلیک روی فلش چپ (اسکرول به چپ - در RTL به سمت انتهای لیست)
+if (arrowLeft) {
+  arrowLeft.addEventListener('click', () => {
+    navContent.scrollBy({ left: 200, behavior: 'smooth' });
     setTimeout(checkScrollButtons, 350);
   });
 }
