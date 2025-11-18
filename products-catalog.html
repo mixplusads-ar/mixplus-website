@@ -1375,21 +1375,21 @@ function checkScrollButtons() {
   if (!navContent) return;
   
   const hasOverflow = navContent.scrollWidth > navContent.clientWidth;
-  const scrollLeft = navContent.scrollLeft;
+  const scrollLeft = Math.abs(navContent.scrollLeft); // استفاده از مقدار مطلق
   const maxScroll = navContent.scrollWidth - navContent.clientWidth;
   
-  // نمایش یا مخفی کردن فلش چپ (سمت چپ در RTL)
+  // فلش راست: نمایش بده اگه هنوز میشه به چپ رفت (ابتدای لیست)
   if (hasOverflow && scrollLeft < maxScroll - 5) {
-    arrowLeft.classList.add('visible');
-  } else {
-    arrowLeft.classList.remove('visible');
-  }
-  
-  // نمایش یا مخفی کردن فلش راست (سمت راست در RTL)
-  if (hasOverflow && scrollLeft > 5) {
     arrowRight.classList.add('visible');
   } else {
     arrowRight.classList.remove('visible');
+  }
+  
+  // فلش چپ: نمایش بده اگه از ابتدا جلوتر رفتیم (میشه برگشت)
+  if (hasOverflow && scrollLeft > 5) {
+    arrowLeft.classList.add('visible');
+  } else {
+    arrowLeft.classList.remove('visible');
   }
 }
 
