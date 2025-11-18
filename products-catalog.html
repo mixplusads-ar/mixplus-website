@@ -1396,7 +1396,7 @@ function checkScrollButtons() {
 // کلیک روی فلش راست (RTL: اسکرول به چپ - در RTL به سمت انتهای لیست)
 if (arrowRight) {
   arrowRight.addEventListener('click', () => {
-    navContent.scrollBy({ left: -200, behavior: 'smooth' });  // ✅ تغییر به -200
+    navContent.scrollBy({ left: 200, behavior: 'smooth' });  // ✅ تغییر به -200
     setTimeout(checkScrollButtons, 350);
   });
 }
@@ -1404,7 +1404,7 @@ if (arrowRight) {
 // کلیک روی فلش چپ (RTL: اسکرول به راست - در RTL به سمت ابتدای لیست)
 if (arrowLeft) {
   arrowLeft.addEventListener('click', () => {
-    navContent.scrollBy({ left: 200, behavior: 'smooth' });  // ✅ تغییر به 200
+    navContent.scrollBy({ left: -200, behavior: 'smooth' });  // ✅ تغییر به 200
     setTimeout(checkScrollButtons, 350);
   });
 }
