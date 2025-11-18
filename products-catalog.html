@@ -462,6 +462,11 @@ body {
 /* Collections Navigation - Minimal */
 .collections-nav {
   margin-bottom: 3rem;
+  position: relative;
+}
+
+.collections-nav__wrapper {
+  position: relative;
 }
 
 .collections-nav__content {
@@ -470,6 +475,7 @@ body {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
+  scroll-behavior: smooth;
 }
 
 .collections-nav__content::-webkit-scrollbar {
@@ -483,6 +489,59 @@ body {
   flex-wrap: nowrap;
   width: max-content;
   min-width: 100%;
+}
+
+/* Navigation Arrows */
+.collections-nav__arrow {
+  position: absolute;
+  top: 0;
+  bottom: 1.25rem;
+  width: 40px;
+  background: linear-gradient(to right, var(--bg), transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.collections-nav__arrow.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.collections-nav__arrow--left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg) 60%, transparent);
+}
+
+.collections-nav__arrow--right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg) 60%, transparent);
+}
+
+[data-theme="dark"] .collections-nav__arrow--left {
+  background: linear-gradient(to right, var(--bg) 60%, transparent);
+}
+
+[data-theme="dark"] .collections-nav__arrow--right {
+  background: linear-gradient(to left, var(--bg) 60%, transparent);
+}
+
+.collections-nav__arrow-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--brand);
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+}
+
+.collections-nav__arrow:hover .collections-nav__arrow-icon {
+  transform: scale(1.15);
+  color: #0d8f84;
 }
 
 .category-btn {
@@ -1010,9 +1069,25 @@ body {
   
   <!-- Collections Navigation -->
   <div class="collections-nav">
-    <div class="collections-nav__content">
-      <div class="collections-list" id="category-switcher">
-        <!-- Will be populated by JavaScript -->
+    <div class="collections-nav__wrapper">
+      <!-- Left Arrow (RTL: راست) -->
+      <div class="collections-nav__arrow collections-nav__arrow--right" id="nav-arrow-right">
+        <svg class="collections-nav__arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </div>
+      
+      <!-- Right Arrow (RTL: چپ) -->
+      <div class="collections-nav__arrow collections-nav__arrow--left" id="nav-arrow-left">
+        <svg class="collections-nav__arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </div>
+      
+      <div class="collections-nav__content" id="nav-content">
+        <div class="collections-list" id="category-switcher">
+          <!-- Will be populated by JavaScript -->
+        </div>
       </div>
     </div>
     <div class="collections-divider"></div>
@@ -1288,6 +1363,61 @@ if (mobileSocialTrigger) {
     mobileSocial.classList.toggle('active');
   });
 }
+
+// ==================== NAVIGATION ARROWS ====================
+const navContent = document.getElementById('nav-content');
+const arrowLeft = document.getElementById('nav-arrow-left');
+const arrowRight = document.getElementById('nav-arrow-right');
+
+// تابع بررسی overflow و نمایش فلش‌ها
+function checkScrollButtons() {
+  if (!navContent) return;
+  
+  const hasOverflow = navContent.scrollWidth > navContent.clientWidth;
+  const scrollLeft = navContent.scrollLeft;
+  const maxScroll = navContent.scrollWidth - navContent.clientWidth;
+  
+  // نمایش یا مخفی کردن فلش چپ (سمت چپ در RTL)
+  if (hasOverflow && scrollLeft < maxScroll - 5) {
+    arrowLeft.classList.add('visible');
+  } else {
+    arrowLeft.classList.remove('visible');
+  }
+  
+  // نمایش یا مخفی کردن فلش راست (سمت راست در RTL)
+  if (hasOverflow && scrollLeft > 5) {
+    arrowRight.classList.add('visible');
+  } else {
+    arrowRight.classList.remove('visible');
+  }
+}
+
+// کلیک روی فلش چپ (اسکرول به چپ)
+if (arrowLeft) {
+  arrowLeft.addEventListener('click', () => {
+    navContent.scrollBy({ left: 200, behavior: 'smooth' });
+    setTimeout(checkScrollButtons, 350);
+  });
+}
+
+// کلیک روی فلش راست (اسکرول به راست)
+if (arrowRight) {
+  arrowRight.addEventListener('click', () => {
+    navContent.scrollBy({ left: -200, behavior: 'smooth' });
+    setTimeout(checkScrollButtons, 350);
+  });
+}
+
+// بررسی اولیه
+setTimeout(checkScrollButtons, 100);
+
+// بررسی با اسکرول
+if (navContent) {
+  navContent.addEventListener('scroll', checkScrollButtons);
+}
+
+// بررسی با resize
+window.addEventListener('resize', checkScrollButtons);
   </script>
   
 
