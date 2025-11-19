@@ -40,7 +40,14 @@ html {
 }
 
 body {
-  /* زبان فارسی */
+  font-family: var(--font-fa);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* زبان فارسی */
 html[lang="fa"] body {
   font-family: var(--font-fa);
   direction: rtl;
@@ -101,7 +108,6 @@ html[lang="en"] .mix-header__mobile-menu {
 
 html[lang="en"] .mix-header__mobile-menu.active {
   transform: translateX(0);
-}
 }
 
 .hidden {
@@ -896,19 +902,19 @@ html[lang="en"] .mix-header__mobile-menu.active {
               <div class="mix-megamenu__col">
                 <a href="products-catalog.html?category=hob" class="mix-megamenu__root-item" data-category="hob">
                   <span class="text-fa">اجاق گاز</span>
-                  <span class="text-en hidden">Hob</span>
+                  <span class="text-en">Hob</span>
                 </a>
                 <a href="products-catalog.html?category=sink" class="mix-megamenu__root-item" data-category="sink">
                   <span class="text-fa">سینک ظرف‌شویی</span>
-                  <span class="text-en hidden">Sink</span>
+                  <span class="text-en">Sink</span>
                 </a>
                 <a href="products-catalog.html?category=oven" class="mix-megamenu__root-item" data-category="oven">
                   <span class="text-fa">فر توکار</span>
-                  <span class="text-en hidden">Built-in Oven</span>
+                  <span class="text-en">Built-in Oven</span>
                 </a>
                 <a href="products-catalog.html?category=hood" class="mix-megamenu__root-item" data-category="hood">
                   <span class="text-fa">هود</span>
-                  <span class="text-en hidden">Hood</span>
+                  <span class="text-en">Hood</span>
                 </a>
               </div>
               <div class="mix-megamenu__col" id="products-subs"></div>
@@ -934,19 +940,19 @@ html[lang="en"] .mix-header__mobile-menu.active {
             <div style="padding: 1.5rem;">
               <a href="#" class="mix-megamenu__sub-item">
                 <span class="text-fa">فرآیند رسیدگی به شکایات</span>
-                <span class="text-en hidden">Complaint Process</span>
+                <span class="text-en">Complaint Process</span>
               </a>
               <a href="#" class="mix-megamenu__sub-item">
                 <span class="text-fa">شرایط گارانتی محصولات</span>
-                <span class="text-en hidden">Warranty Terms</span>
+                <span class="text-en">Warranty Terms</span>
               </a>
               <a href="#" class="mix-megamenu__sub-item">
                 <span class="text-fa">درخواست نصب محصول</span>
-                <span class="text-en hidden">Installation Request</span>
+                <span class="text-en">Installation Request</span>
               </a>
               <a href="#" class="mix-megamenu__sub-item">
                 <span class="text-fa">ثبت شکایت</span>
-                <span class="text-en hidden">Complaint</span>
+                <span class="text-en">Complaint</span>
               </a>
             </div>
           </div>
@@ -1051,7 +1057,7 @@ html[lang="en"] .mix-header__mobile-menu.active {
   <div class="mix-header__mobile-menu" id="mobile-menu">
     <button class="mix-header__mobile-item" id="mobile-products-trigger">
       <span class="text-fa">محصولات ▼</span>
-      <span class="text-en hidden">Products ▼</span>
+      <span class="text-en">Products ▼</span>
     </button>
     <div class="mix-header__mobile-submenu" id="mobile-products">
       <a href="products-catalog.html?category=hob"><span class="text-fa">اجاق گاز</span></a>
