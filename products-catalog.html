@@ -40,11 +40,68 @@ html {
 }
 
 body {
+  /* زبان فارسی */
+html[lang="fa"] body {
   font-family: var(--font-fa);
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  direction: rtl;
+}
+
+/* زبان انگلیسی */
+html[lang="en"] body {
+  font-family: var(--font-en);
+  direction: ltr;
+}
+
+/* نمایش/مخفی کردن متون بر اساس زبان */
+html[lang="fa"] .text-en {
+  display: none !important;
+}
+
+html[lang="en"] .text-fa {
+  display: none !important;
+}
+
+/* جهت header در LTR */
+html[lang="en"] .mix-header__container {
+  flex-direction: row-reverse;
+}
+
+html[lang="en"] .mix-header__nav--right {
+  justify-content: flex-start;
+  order: 3;
+}
+
+html[lang="en"] .mix-header__nav--left {
+  justify-content: flex-end;
+  order: 1;
+}
+
+/* mega menu در LTR */
+html[lang="en"] .mix-megamenu {
+  left: 0;
+  right: auto;
+}
+
+html[lang="en"] .mix-megamenu__col:first-child {
+  border-right: 1px solid var(--stroke);
+  border-left: none;
+}
+
+html[lang="en"] .mix-megamenu__root-item.active::before {
+  left: 0;
+  right: auto;
+}
+
+/* mobile menu در LTR */
+html[lang="en"] .mix-header__mobile-menu {
+  left: 0;
+  right: auto;
+  transform: translateX(-100%);
+}
+
+html[lang="en"] .mix-header__mobile-menu.active {
+  transform: translateX(0);
+}
 }
 
 .hidden {
@@ -831,9 +888,9 @@ body {
         <!-- Products Mega Menu -->
         <div style="position: relative;">
           <button class="mix-header__item" id="products-trigger">
-            <span class="text-fa">محصولات</span>
-            <span class="text-en hidden">Products</span>
-          </button>
+  <span class="text-fa">محصولات</span>
+  <span class="text-en">Products</span>
+</button>
           <div class="mix-megamenu" id="products-mega">
             <div class="mix-megamenu__content">
               <div class="mix-megamenu__col">
@@ -862,17 +919,17 @@ body {
         <div class="mix-header__divider"></div>
         
         <a href="#" class="mix-header__item">
-          <span class="text-fa">نمایندگی‌های مجاز</span>
-          <span class="text-en hidden">Dealers</span>
-        </a>
+  <span class="text-fa">نمایندگی‌های مجاز</span>
+  <span class="text-en">Dealers</span>
+</a>
         
         <div class="mix-header__divider"></div>
         
         <div style="position: relative;">
           <button class="mix-header__item" id="aftersales-trigger">
-            <span class="text-fa">خدمات پس از فروش</span>
-            <span class="text-en hidden">After-Sales</span>
-          </button>
+  <span class="text-fa">خدمات پس از فروش</span>
+  <span class="text-en">After-Sales</span>
+</button>
           <div class="mix-megamenu" id="aftersales-mega" style="min-width: 320px;">
             <div style="padding: 1.5rem;">
               <a href="#" class="mix-megamenu__sub-item">
@@ -947,7 +1004,7 @@ body {
         
         <a href="docs/catalog-fa.pdf" class="mix-header__item" target="_blank" id="catalog-link">
           <span class="text-fa">دانلود کاتالوگ</span>
-          <span class="text-en hidden">Download Catalog</span>
+          <span class="text-en">Download Catalog</span>
         </a>
         
         <div class="mix-header__divider"></div>
@@ -955,7 +1012,7 @@ body {
         <div style="position: relative;">
           <button class="mix-header__item" id="lang-trigger">
             <span class="text-fa">فارسی</span>
-            <span class="text-en hidden">English</span>
+            <span class="text-en">English</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin: 0 4px;">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
@@ -963,7 +1020,7 @@ body {
           <div class="mix-dropdown" id="lang-dropdown">
             <a href="#" id="switch-lang">
               <span class="text-fa">English</span>
-              <span class="text-en hidden">فارسی</span>
+              <span class="text-en ">فارسی</span>
             </a>
           </div>
         </div>
@@ -1051,7 +1108,10 @@ body {
   
   <!-- Header Row: Title + Search -->
   <div class="catalog-header-row">
-    <h1 class="catalog-title" id="page-title">اجاق گاز</h1>
+    <h1 class="catalog-title" id="page-title">
+  <span class="text-fa">اجاق گاز</span>
+  <span class="text-en">Hob</span>
+</h1>
     
     <div class="search-container">
       <input 
@@ -1104,6 +1164,7 @@ body {
   
 </div>
 
+  
   <!-- JavaScript -->
   <script>
     // Load products from JSON
@@ -1419,6 +1480,59 @@ if (navContent) {
 
 // بررسی با resize
 window.addEventListener('resize', checkScrollButtons);
+
+    // ==================== LANGUAGE SYSTEM ====================
+let currentLang = localStorage.getItem('mix_lang') || 'fa';
+
+function switchLanguage() {
+  currentLang = currentLang === 'fa' ? 'en' : 'fa';
+  localStorage.setItem('mix_lang', currentLang);
+  applyLanguage();
+  
+  document.getElementById('mobile-menu').classList.remove('active');
+  document.getElementById('mobile-overlay').classList.remove('active');
+}
+
+function applyLanguage() {
+  const html = document.documentElement;
+  
+  html.setAttribute('lang', currentLang);
+  html.setAttribute('dir', currentLang === 'fa' ? 'rtl' : 'ltr');
+  
+  // تغییر placeholder جستجو
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) {
+    searchInput.placeholder = currentLang === 'fa' ? 'جستجو...' : 'Search...';
+  }
+  
+  // تغییر لینک کاتالوگ
+  const catalogLink = document.getElementById('catalog-link');
+  if (catalogLink) {
+    catalogLink.href = `docs/catalog-${currentLang}.pdf`;
+  }
+  
+  updatePageTitle();
+}
+
+// Event Listeners
+document.getElementById('switch-lang').addEventListener('click', (e) => {
+  e.preventDefault();
+  switchLanguage();
+});
+
+document.getElementById('mobile-lang-switch').addEventListener('click', switchLanguage);
+
+document.getElementById('lang-trigger').addEventListener('click', e => {
+  e.stopPropagation();
+  document.getElementById('lang-dropdown').classList.toggle('active');
+});
+
+document.addEventListener('click', () => {
+  document.getElementById('lang-dropdown').classList.remove('active');
+});
+
+// اعمال زبان در بارگذاری
+applyLanguage();
   </script>
   
 
